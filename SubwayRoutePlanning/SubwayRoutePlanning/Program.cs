@@ -14,27 +14,29 @@ namespace SubwayRoutePlanning
         {
             Map map = new Map();
             RoutePlanning routePlanning = new RoutePlanning(map);
+            //命令行输入相关功能
             if (args.Length != 0)
                 switch (args[0])
                 {
+                    //最短线路规划
                     case "-b":
                         if (args.Length == 3 && map.Stations.Contains(args[1]) && map.Stations.Contains(args[2]))
                             routePlanning.PrintRoute(routePlanning.ShortestRoutePlanning(args[1], args[2]));
                         else
                             Console.WriteLine("@@@最短路径规划站点参数有误@@@");
                         break;
+                    //最少换乘线路规划
                     case "-c":
                         if (args.Length == 3 && map.Stations.Contains(args[1]) && map.Stations.Contains(args[2]))
                             routePlanning.PrintRoute(routePlanning.LeastTransferPlanning(args[1], args[2]));
                         else
                             Console.WriteLine("@@@最少换乘路径规划站点参数有误@@@");
                         break;
-                    case "–a":
-                        break;
                     default:
                         Console.WriteLine("@@@命令类型错误@@@");
                         break;
                 }
+            //程序内输入相关功能
             else
             {
                 string subwayLineName;
@@ -55,13 +57,12 @@ namespace SubwayRoutePlanning
     class RoutePlanning
     {
         private int stationVertexNum;
-        private int[,] floydAdjacencyMatrix;
-        private List<int>[,] routeMatrix;
+        private int[,] floydAdjacencyMatrix;//最短路径数值矩阵
+        private List<int>[,] routeMatrix;//最短路径矩阵
+
         private List<List<string>> leastTransferRoutes = new List<List<string>>();
         private int recursiveDepthLimit = -1;
         private Map map;
-
-        private int shortestTraverseRouteLength = -1;
 
         public RoutePlanning(Map map)
         {
@@ -73,21 +74,21 @@ namespace SubwayRoutePlanning
             initFloyd(floydAdjacencyMatrix, routeMatrix);
         }
 
-        //为Floyd算法计算路径(可计算多条线路)
-        private void initFloyd(int[,] adjacencyMatrix, List<int>[,] pathMatrix)
+        //为Floyd算法初始化路径相关矩阵(可计算多条线路)
+        private void initFloyd(int[,] adjacencyMatrix, List<int>[,] routeMatrix)
         {
             for (int i = 0; i < stationVertexNum; i++)
                 for (int j = 0; j < stationVertexNum; j++)
                 {
-                    pathMatrix[i, j] = new List<int>();
-                    pathMatrix[i, j].Add(-1);
+                    routeMatrix[i, j] = new List<int>();
+                    routeMatrix[i, j].Add(-1);
                 }
-
+            
             for (int k = 0; k < stationVertexNum; k++)
             {
                 for (int i = 0; i < stationVertexNum; i++)
                 {
-                    if (k == i)
+                    if (k == i)//排除中间结点就是本身的情况
                         continue;
                     for (int j = 0; j < stationVertexNum; j++)
                     {
@@ -98,24 +99,25 @@ namespace SubwayRoutePlanning
                         else if (adjacencyMatrix[i, j] == -1 || (adjacencyMatrix[i, j] > adjacencyMatrix[i, k] + adjacencyMatrix[k, j]))
                         {
                             adjacencyMatrix[i, j] = adjacencyMatrix[i, k] + adjacencyMatrix[k, j];
-                            pathMatrix[i, j].Clear();
-                            pathMatrix[i, j].Add(k);
+                            routeMatrix[i, j].Clear();
+                            routeMatrix[i, j].Add(k);
                         }
                         else if (adjacencyMatrix[i, j] == adjacencyMatrix[i, k] + adjacencyMatrix[k, j])
-                            pathMatrix[i, j].Add(k);
+                            routeMatrix[i, j].Add(k);
                     }
                 }
             }
         }
 
-        //递归寻找Floyd算法中的完整最短路径
+        //递归寻找Floyd算法中的完整最短路径，不断查找两结点间的最短路径中间结点
         private void searchCompletedShortestRoute(int station1Index, int station2Index, List<string> shortestRoute)
         {
             int shortestRouteInsertIndex;
             int pathStationIndex = routeMatrix[station1Index, station2Index][0];
-
+            //将两结点无中间结点状态作为递归基
             if (pathStationIndex == -1)
                 return;
+
             shortestRouteInsertIndex = shortestRoute.FindIndex((string stationName) => stationName == (string)map.Stations.GetKey(station2Index));
             shortestRoute.Insert(shortestRouteInsertIndex, (string)map.Stations.GetKey(pathStationIndex));
             searchCompletedShortestRoute(station1Index, pathStationIndex, shortestRoute);
@@ -148,7 +150,7 @@ namespace SubwayRoutePlanning
 
             newNotRecursiveSubwayLines.Remove(curSubwayLineName);
             newLeastTransferRoute.Add(curStationName);
-
+            //剪枝操作，保证递归深度不超过已知的最优状态
             if (recursiveDepthLimit != -1 && curRecursiveDepth > recursiveDepthLimit)
                 return;
 
@@ -264,10 +266,9 @@ namespace SubwayRoutePlanning
                 for (int j = 1; j < leastTransferRoutes[i].Count; j++)
                 {
                     List<string> betweenStations = getBetweenStations(leastTransferRoutes[i][j - 1], leastTransferRoutes[i][j]);
-                    if (betweenStations == null)
-                        continue;
+                    if (betweenStations != null)
+                        completedLeastTransferRoutes[i].AddRange(betweenStations);
                     //插入中间站点并添加下一个换乘站点
-                    completedLeastTransferRoutes[i].AddRange(betweenStations);
                     completedLeastTransferRoutes[i].Add(leastTransferRoutes[i][j]);
                 }
             }
@@ -275,31 +276,6 @@ namespace SubwayRoutePlanning
             completedLeastTransferRoutes = removeLongerRoute(completedLeastTransferRoutes);
 
             return completedLeastTransferRoutes[0];
-        }
-
-        private void SearchShortestTraverseRoute(int recursiveDepth, int curStationIndex, int traverseCost)
-        {
-            if (shortestTraverseRouteLength != -1 && traverseCost > shortestTraverseRouteLength)
-                return;
-
-            if (recursiveDepth == stationVertexNum - 1)
-            {
-                if (shortestTraverseRouteLength == -1)
-                    shortestTraverseRouteLength = traverseCost;
-                else if (shortestTraverseRouteLength > traverseCost)
-                    shortestTraverseRouteLength = traverseCost;
-            }
-
-        }
-
-        //第三个需求：最短遍历路径
-        public void ShortestTraversePlanning(string stationName)
-        {
-            int stationIndex = map.Stations.IndexOfKey(stationName);
-
-            SearchShortestTraverseRoute(0, stationIndex, 0);
-
-            System.Console.WriteLine(shortestTraverseRouteLength);
         }
 
         //获取两站之间的地铁线路名（可能出现两个以上的线路）
@@ -343,10 +319,17 @@ namespace SubwayRoutePlanning
             {
                 List<string> prevStationsLineNames = GetStationsLineNames(route[i - 2], route[i - 1]);
                 List<string> curStationsLineNames = GetStationsLineNames(route[i - 1], route[i]);
-                if (haveSameStationsLineNames(prevStationsLineNames, curStationsLineNames))
-                    Console.WriteLine(route[i - 1]);
+                if (route[i - 2].Equals("四惠") && route[i - 1].Equals("四惠东"))
+                    Console.WriteLine(route[i - 1] + "换乘地铁八通线");
+                else if (route[i - 2].Equals("四惠东") && route[i - 1].Equals("四惠"))
+                    Console.WriteLine(route[i - 1] + "换乘地铁1号线");
                 else
-                    Console.WriteLine(route[i - 1] + "换乘地铁" + curStationsLineNames[0]);
+                {
+                    if (haveSameStationsLineNames(prevStationsLineNames, curStationsLineNames))
+                        Console.WriteLine(route[i - 1]);
+                    else
+                        Console.WriteLine(route[i - 1] + "换乘地铁" + curStationsLineNames[0]);
+                }
             }
             Console.WriteLine(route[route.Count - 1]);
         }
@@ -435,7 +418,7 @@ namespace SubwayRoutePlanning
             }
             catch(Exception e)
             {
-                Console.WriteLine("The file could not be read:");
+                Console.WriteLine("文件无法读取");
                 Console.WriteLine(e.Message);
                 System.Environment.Exit(0);
             }
