@@ -14,66 +14,35 @@ namespace SubwayRoutePlanning
         {
             Map map = new Map();
             RoutePlanning routePlanning = new RoutePlanning(map);
-            if (args.Length != 0)
-                switch (args[0])
-                {
-                    case "-b":
-                        if (args.Length == 3 && map.Stations.Contains(args[1]) && map.Stations.Contains(args[2]))
-                            routePlanning.PrintRoute(routePlanning.ShortestRoutePlanning(args[1], args[2]));
-                        else
-                            Console.WriteLine("@@@最短路径规划站点参数有误@@@");
-                        break;
-                    case "-c":
-                        if (args.Length == 3 && map.Stations.Contains(args[1]) && map.Stations.Contains(args[2]))
-                            routePlanning.PrintRoute(routePlanning.LeastTransferPlanning(args[1], args[2]));
-                        else
-                            Console.WriteLine("@@@最少换乘路径规划站点参数有误@@@");
-                        break;
-                    case "–a":
-                        break;
-                    default:
-                        Console.WriteLine("@@@命令类型错误@@@");
-                        break;
-                }
-            else
-            {
-                string subwayLineName;
-                while ((subwayLineName = Console.ReadLine()) != null)
-                {
-                    if (map.SubwayLines.Contains(subwayLineName))
-                        foreach (string stationName in ((SubwayLine)map.SubwayLines[subwayLineName]).InLineSubwayStationsNames)
-                            Console.WriteLine("*" + stationName);
-                    else
-                        Console.WriteLine("@@@线路输入错误@@@");
-                }
-            }
+            Console.WriteLine("------");
+            routePlanning.PrintRoute(routePlanning.LeastTransferPlanning("南礼士路", "新街口"));
+            //routePlanning.PrintRoute(routePlanning.ShortestRoutePlanning("南礼士路", "新街口"));
+            //routePlanning.PrintRoute(routePlanning.LeastTransferPlanning("西局", "西单"));
             Console.ReadKey();
         }
     }
-
     //线路规划类：计算三种请求
     class RoutePlanning
     {
         private int stationVertexNum;
-        private int[,] floydAdjacencyMatrix;
-        private List<int>[,] routeMatrix;
-        private List<List<string>> leastTransferRoutes = new List<List<string>>();
-        private int recursiveDepthLimit = -1;
+        private int[,] shortestRouteFloydAdjacencyMatrix, leastTransferFloydAdjacencyMatrix;
+        private List<int>[,] shortestRouteMatrix, leastTransferMatrix;
         private Map map;
-
-        private int shortestTraverseRouteLength = -1;
 
         public RoutePlanning(Map map)
         {
             this.map = map;
             stationVertexNum = map.Stations.Count;
-            floydAdjacencyMatrix = (int[,])map.StationsGraph.AdjacencyMatrix.Clone();
-            routeMatrix = new List<int>[stationVertexNum, stationVertexNum];
+            shortestRouteFloydAdjacencyMatrix = (int[,])map.StationsGraph.AdjacencyMatrix.Clone();
+            shortestRouteMatrix = new List<int>[stationVertexNum, stationVertexNum];
+            leastTransferFloydAdjacencyMatrix = (int[,])map.StationsGraph.OnlyTransferAdjacencyMatrix.Clone();
+            leastTransferMatrix = new List<int>[stationVertexNum, stationVertexNum];
 
-            initFloyd(floydAdjacencyMatrix, routeMatrix);
+            initFloyd(shortestRouteFloydAdjacencyMatrix, shortestRouteMatrix);
+            initFloyd(leastTransferFloydAdjacencyMatrix, leastTransferMatrix);
         }
 
-        //为Floyd算法计算路径(可计算多条线路)
+        //为Floyd算法计算路径
         private void initFloyd(int[,] adjacencyMatrix, List<int>[,] pathMatrix)
         {
             for (int i = 0; i < stationVertexNum; i++)
@@ -112,7 +81,7 @@ namespace SubwayRoutePlanning
         private void searchCompletedShortestRoute(int station1Index, int station2Index, List<string> shortestRoute)
         {
             int shortestRouteInsertIndex;
-            int pathStationIndex = routeMatrix[station1Index, station2Index][0];
+            int pathStationIndex = shortestRouteMatrix[station1Index, station2Index][0];
 
             if (pathStationIndex == -1)
                 return;
@@ -139,89 +108,93 @@ namespace SubwayRoutePlanning
             return shortestRoute;
         }
 
-        //递归寻找Floyd算法中的只包含换乘站的最少换乘路径
-        private void searchLeastTransferRoute(int curRecursiveDepth, string curStationName, string curSubwayLineName, string targetStationName, List<string> notRecursiveSubwayLines, List<string> leastTransferRoute)
+        //获取站点两侧换乘站点信息
+        private List<string> getSideTransferStationsName(string stationName)
         {
-            List<string> inLineSubwayStationsNames = ((SubwayLine)map.SubwayLines[curSubwayLineName]).InLineSubwayStationsNames;
-            List<string> newNotRecursiveSubwayLines = new List<string>(notRecursiveSubwayLines.ToArray());
-            List<string> newLeastTransferRoute = new List<string>(leastTransferRoute.ToArray());
+            int stationIndex;
+            SubwayLine subwayLine;
+            List<string> sideTransferStationsName = new List<string>();
+        
+            subwayLine = (SubwayLine)map.SubwayLines[(((Station)map.Stations[stationName]).PlacedSubwayLineName[0])];
+            stationIndex = subwayLine.InLineSubwayStationsNames.FindIndex((string stationNameInSubwayLine) => stationNameInSubwayLine == stationName);
 
-            newNotRecursiveSubwayLines.Remove(curSubwayLineName);
-            newLeastTransferRoute.Add(curStationName);
-
-            if (recursiveDepthLimit != -1 && curRecursiveDepth > recursiveDepthLimit)
-                return;
-
-            if (inLineSubwayStationsNames.Contains(targetStationName))
+            for (int i = stationIndex; i >= 0; i--)
             {
-                recursiveDepthLimit = curRecursiveDepth;
-                newLeastTransferRoute.Add(targetStationName);
-                leastTransferRoutes.Add(newLeastTransferRoute);
-                return;
+                if (((Station)map.Stations[subwayLine.InLineSubwayStationsNames[i]]).IsTransferStation)
+                {
+                    sideTransferStationsName.Add(subwayLine.InLineSubwayStationsNames[i]);
+                    break;
+                }
+            }
+            for (int i = stationIndex; i < subwayLine.InLineSubwayStationsNames.Count; i++)
+            {
+                if (((Station)map.Stations[subwayLine.InLineSubwayStationsNames[i]]).IsTransferStation)
+                {
+                    sideTransferStationsName.Add(subwayLine.InLineSubwayStationsNames[i]);
+                    break;
+                }
             }
 
-            foreach (string stationName in inLineSubwayStationsNames)
-            {
-                Station station = (Station)map.Stations[stationName];
-                if (station.IsTransferStation)
-                    foreach (string subwayLineName in station.PlacedSubwayLineName)
-                        if (newNotRecursiveSubwayLines.Contains(subwayLineName))
-                            searchLeastTransferRoute(curRecursiveDepth + 1, stationName, subwayLineName, targetStationName, newNotRecursiveSubwayLines, newLeastTransferRoute);
-            }
+            if (sideTransferStationsName.Count == 2 && sideTransferStationsName[0] == sideTransferStationsName[1])
+                sideTransferStationsName.RemoveAt(1);
 
-            return;
+            return sideTransferStationsName;
         }
 
-        //获取两站之间的所有站点（同一线路上），不存在站点时返回null
+        //递归寻找Floyd算法中的只包含换乘站的最少换乘路径
+        private void searchLeastTransferRoute(int station1Index, int station2Index, List<List<string>> leastTransferRoutes, int routeIndex)
+        {
+            int leastTransferRouteInsertIndex;
+            int pathStationIndex;
+            List<string> basicLeastTransferRoute = new List<string>(leastTransferRoutes[routeIndex].ToArray());
+
+            if (station1Index == station2Index)
+            {
+                List<string> leastTransferRoute = new List<string>();
+                leastTransferRoute.Add((string)map.Stations.GetKey(station1Index));
+                leastTransferRoutes.Add(leastTransferRoute);
+                return;
+            }
+            //实际递归部分
+            for (int i = 0; i < leastTransferMatrix[station1Index, station2Index].Count; i++)
+            {
+                pathStationIndex = leastTransferMatrix[station1Index, station2Index][i];
+                if (pathStationIndex == -1)
+                    return;
+                if (i >= 1)
+                    leastTransferRoutes.Add(new List<string>(basicLeastTransferRoute.ToArray()));
+                leastTransferRouteInsertIndex = leastTransferRoutes[routeIndex + i].FindIndex((string stationName) => stationName == (string)(map.Stations.GetKey(station2Index)));
+                leastTransferRoutes[routeIndex + i].Insert(leastTransferRouteInsertIndex, (string)map.Stations.GetKey(pathStationIndex));
+                searchLeastTransferRoute(station1Index, pathStationIndex, leastTransferRoutes, routeIndex + i);
+                searchLeastTransferRoute(pathStationIndex, station2Index, leastTransferRoutes, routeIndex + i);
+            }
+        }
+
+        //获取两站之间的所有站点（同一线路上）
         private List<string> getBetweenStations (string station1Name, string station2Name)
         {
             int station1SubwayLineIndex, station2SubwayLineIndex;
             string stationLinesName = GetStationsLineNames(station1Name, station2Name)[0];
             SubwayLine subwayLine = (SubwayLine)map.SubwayLines[stationLinesName];
             List<string> stationsInSubwauLine = new List<string>();
-            List<string> outerStationsInSubwauLine = new List<string>();
 
             station1SubwayLineIndex = subwayLine.InLineSubwayStationsNames.FindIndex((string stationName) => stationName == station1Name);
             station2SubwayLineIndex = subwayLine.InLineSubwayStationsNames.FindIndex((string stationName) => stationName == station2Name);
 
             if (station1SubwayLineIndex + 1 < station2SubwayLineIndex)
+            {
                 for (int i = station1SubwayLineIndex + 1; i < station2SubwayLineIndex; i++)
                     stationsInSubwauLine.Add(subwayLine.InLineSubwayStationsNames[i]);
+                return stationsInSubwauLine;
+            }
             else if (station1SubwayLineIndex > station2SubwayLineIndex + 1)
+            {
                 for (int i = station1SubwayLineIndex - 1; i > station2SubwayLineIndex; i--)
                     stationsInSubwauLine.Add(subwayLine.InLineSubwayStationsNames[i]);
-            //考虑到回环的地铁线路，需要另一方向的路线记录
-            if (subwayLine.IsCircle)
-            {
-                if (station1SubwayLineIndex < station2SubwayLineIndex && station1SubwayLineIndex + subwayLine.InLineSubwayStationsNames.Count - station2SubwayLineIndex > 0)
-                {
-                    for (int i = station1SubwayLineIndex - 1; i >= 0; i--)
-                        outerStationsInSubwauLine.Add(subwayLine.InLineSubwayStationsNames[i]);
-                    for (int i = subwayLine.InLineSubwayStationsNames.Count - 1; i > station2SubwayLineIndex; i--)
-                        outerStationsInSubwauLine.Add(subwayLine.InLineSubwayStationsNames[i]);
-                }
-                else if (station1SubwayLineIndex > station2SubwayLineIndex && station2SubwayLineIndex + subwayLine.InLineSubwayStationsNames.Count - station1SubwayLineIndex > 0)
-                {
-                    for (int i = station1SubwayLineIndex + 1; i < subwayLine.InLineSubwayStationsNames.Count; i++)
-                        outerStationsInSubwauLine.Add(subwayLine.InLineSubwayStationsNames[i]);
-                    for (int i = 0; i < station2SubwayLineIndex; i++)
-                        outerStationsInSubwauLine.Add(subwayLine.InLineSubwayStationsNames[i]);
-                }
-            }
-            //返回路径最小的间隔站点信息
-            if (stationsInSubwauLine.Count == 0 && outerStationsInSubwauLine.Count == 0)
-                return null;
-            else if (stationsInSubwauLine.Count != 0 && outerStationsInSubwauLine.Count == 0)
                 return stationsInSubwauLine;
-            else if (stationsInSubwauLine.Count != 0 && outerStationsInSubwauLine.Count == 0)
-                return outerStationsInSubwauLine;
-            else
-            {
-                if (stationsInSubwauLine.Count <= outerStationsInSubwauLine.Count)
-                    return stationsInSubwauLine;
-                else
-                    return outerStationsInSubwauLine;
-            }     
+            }
+
+            return null;
         }
 
         //移除多个路径中较长的路径
@@ -239,67 +212,76 @@ namespace SubwayRoutePlanning
 
             return removedRoutes;
         }
-
         //第二个需求：求解最少换乘路径
         public List<string> LeastTransferPlanning(string station1Name, string station2Name)
         {
+            List<string> sideTransferStationsName1;
+            List<string> sideTransferStationsName2;
+            List<List<string>> leastTransferRoutes = new List<List<string>>();
             List<List<string>> completedLeastTransferRoutes = new List<List<string>>();
-            List<string> notRecursiveSubwayLines = new List<string>();
-            //初始化搜索参数
-            leastTransferRoutes = new List<List<string>>();
-            recursiveDepthLimit = -1;
-            foreach (SubwayLine subwayLine in map.SubwayLines.Values)
-                notRecursiveSubwayLines.Add(subwayLine.Name);
-            //获取初步的换乘线路
-            foreach (string subwayStationsName in ((Station)map.Stations[station1Name]).PlacedSubwayLineName)
-                searchLeastTransferRoute(0, station1Name, subwayStationsName, station2Name, notRecursiveSubwayLines, new List<string>());
-            //筛选出最少换乘路线
+            int station1Index, station2Index;
+            //两站均在同一地铁线上
+            if (haveSameStationsLineNames(((Station)map.Stations[station1Name]).PlacedSubwayLineName, ((Station)map.Stations[station2Name]).PlacedSubwayLineName))
+            {
+                return ShortestRoutePlanning(station1Name, station2Name);
+            }
+            //两站位于不同地铁线上，需要进行换乘
+            else
+            {
+                //获取只包含换乘站点的最短路径
+                sideTransferStationsName1 = getSideTransferStationsName(station1Name);
+                sideTransferStationsName2 = getSideTransferStationsName(station2Name);
+                foreach (string sideStation1Name in sideTransferStationsName1)
+                {
+                    foreach (string sideStation2Name in sideTransferStationsName2)
+                    {
+                        station1Index = map.Stations.IndexOfKey(sideStation1Name);
+                        station2Index = map.Stations.IndexOfKey(sideStation2Name);
+                        leastTransferRoutes.Add(new List<string>());
+                        leastTransferRoutes[leastTransferRoutes.Count - 1].Add(sideStation1Name);
+                        if (sideStation1Name.Equals(sideStation2Name))
+                            continue;
+                        leastTransferRoutes[leastTransferRoutes.Count - 1].Add(sideStation2Name);
+                        searchLeastTransferRoute(station1Index, station2Index, leastTransferRoutes, leastTransferRoutes.Count - 1);
+                    }
+                }
+            }
+            //去除换乘站点里换乘站点较多的路径
             leastTransferRoutes = removeLongerRoute(leastTransferRoutes);
             //获取完整的最少换乘线路
             for (int i = 0; i < leastTransferRoutes.Count; i++)
             {
+                List<string> headBetweenStations;
+                List<string> tailBetweenStations;
+
                 completedLeastTransferRoutes.Add(new List<string>());
-                //添加第一个站点
-                completedLeastTransferRoutes[i].Add(leastTransferRoutes[i][0]);
+                completedLeastTransferRoutes[i].Add(leastTransferRoutes[i][0]);//添加第一个换乘站点
                 for (int j = 1; j < leastTransferRoutes[i].Count; j++)
                 {
                     List<string> betweenStations = getBetweenStations(leastTransferRoutes[i][j - 1], leastTransferRoutes[i][j]);
                     if (betweenStations == null)
-                        continue;
-                    //插入中间站点并添加下一个换乘站点
-                    completedLeastTransferRoutes[i].AddRange(betweenStations);
-                    completedLeastTransferRoutes[i].Add(leastTransferRoutes[i][j]);
+                        break;
+                    completedLeastTransferRoutes[i].AddRange(betweenStations);//插入中间站点
+                    completedLeastTransferRoutes[i].Add(leastTransferRoutes[i][j]);//添加下一个换乘站点
                 }
+
+                headBetweenStations = getBetweenStations(station1Name, leastTransferRoutes[i][0]);
+                if (headBetweenStations != null)
+                {
+                    headBetweenStations.AddRange(completedLeastTransferRoutes[i]);
+                    completedLeastTransferRoutes[i] = headBetweenStations;
+                }
+                tailBetweenStations = getBetweenStations(leastTransferRoutes[i][leastTransferRoutes[i].Count - 1], station2Name);
+                if (tailBetweenStations != null)
+                    completedLeastTransferRoutes[i].AddRange(tailBetweenStations);
+
+                completedLeastTransferRoutes[i].Insert(0, station1Name);
+                completedLeastTransferRoutes[i].Add(station2Name);
             }
-            //筛选出最少换乘路线中最短路径
+
             completedLeastTransferRoutes = removeLongerRoute(completedLeastTransferRoutes);
 
             return completedLeastTransferRoutes[0];
-        }
-
-        private void SearchShortestTraverseRoute(int recursiveDepth, int curStationIndex, int traverseCost)
-        {
-            if (shortestTraverseRouteLength != -1 && traverseCost > shortestTraverseRouteLength)
-                return;
-
-            if (recursiveDepth == stationVertexNum - 1)
-            {
-                if (shortestTraverseRouteLength == -1)
-                    shortestTraverseRouteLength = traverseCost;
-                else if (shortestTraverseRouteLength > traverseCost)
-                    shortestTraverseRouteLength = traverseCost;
-            }
-
-        }
-
-        //第三个需求：最短遍历路径
-        public void ShortestTraversePlanning(string stationName)
-        {
-            int stationIndex = map.Stations.IndexOfKey(stationName);
-
-            SearchShortestTraverseRoute(0, stationIndex, 0);
-
-            System.Console.WriteLine(shortestTraverseRouteLength);
         }
 
         //获取两站之间的地铁线路名（可能出现两个以上的线路）
@@ -337,7 +319,6 @@ namespace SubwayRoutePlanning
         //根据规则打印路径信息
         public void PrintRoute(List<string> route)
         {
-            Console.WriteLine(route.Count);
             Console.WriteLine(route[0]);
             for (int i = 2; i < route.Count; i++)
             {
@@ -387,10 +368,8 @@ namespace SubwayRoutePlanning
                                 subwayLine.IsCircle = true;
                                 subwayLine.Name = lineNameMatch.Groups[1].Value;
                             }
-                            else if (Regex.Match(line, @"^([0-9a-zA-Z\u4E00-\u9FA5]+)").Success)
-                                subwayLine.Name = line;
                             else
-                                throw new Exception("地铁线路名格式有误");
+                                subwayLine.Name = line;
                         }
                         else
                             return;
@@ -402,8 +381,6 @@ namespace SubwayRoutePlanning
                         {
                             //添加地铁站点名
                             Match stationNameMatch = Regex.Match(stationInfo, @"^[0-9a-zA-Z\u4E00-\u9FA5]+");
-                            if (!stationNameMatch.Success)
-                                throw new Exception("地铁站名格式有误");
                             subwayLine.InLineSubwayStationsNames.Add(stationNameMatch.Value);
                             
                             //若地铁站为记录于系统中，则添加到stations中
@@ -419,8 +396,6 @@ namespace SubwayRoutePlanning
                                 MatchCollection subwayLineMatchCollection = Regex.Matches(stationInfo, @"\[([0-9a-zA-Z\u4E00-\u9FA5]+)\]");
                                 foreach (Match m in subwayLineMatchCollection)
                                 {
-                                    if (!m.Success)
-                                        throw new Exception("地铁站名格式有误");
                                     station.IsTransferStation = true;
                                     station.PlacedSubwayLineName.Add(m.Groups[1].Value);
                                 }
@@ -437,7 +412,6 @@ namespace SubwayRoutePlanning
             {
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
-                System.Environment.Exit(0);
             }
 
             return;
@@ -489,7 +463,7 @@ namespace DataStructure
     {
         private int stationVertexNum;
         private SortedList stationVertices;
-        private int[,] adjacencyMatrix;
+        private int[,] adjacencyMatrix, onlyTransferAdjacencyMatrix;
         private SortedList subwayLines;
 
         public StationsGraph(SortedList stations, SortedList subwayLines)
@@ -497,19 +471,23 @@ namespace DataStructure
             this.stationVertexNum = stations.Count;
             this.stationVertices = stations;
             this.adjacencyMatrix = new int[stationVertexNum, stationVertexNum];
+            this.onlyTransferAdjacencyMatrix = new int[stationVertexNum, stationVertexNum];
             this.subwayLines = subwayLines;
             for (int i = 0; i < stationVertexNum; i++)
             {
                 for (int j = 0; j < stationVertexNum; j++)
                 {
                     adjacencyMatrix[i, j] = -1;
+                    onlyTransferAdjacencyMatrix[i, j] = -1;
                 }
             }
             for (int i = 0; i < stationVertexNum; i++)
             {
                 adjacencyMatrix[i, i] = 0;
+                onlyTransferAdjacencyMatrix[i, i] = 0;
             }
             setAdjacencyMatrix();
+            setOnlyTransferAdjacencyMatrix();
         }
         //根据地铁路线信息设置全站点邻接矩阵
         private void setAdjacencyMatrix()
@@ -537,12 +515,57 @@ namespace DataStructure
 
             return;
         }
-        
+        //根据地铁路线信息设置换乘站点邻接矩阵
+        private void setOnlyTransferAdjacencyMatrix()
+        {
+            foreach (SubwayLine subwayLine in subwayLines.Values)
+            {
+                int prevTransferStationIndex = -1, curTransferStationIndex = -1;
+
+                for (int i = 0; i < subwayLine.InLineSubwayStationsNames.Count; i++)
+                {
+                    curTransferStationIndex = stationVertices.IndexOfKey(subwayLine.InLineSubwayStationsNames[i]);
+                    if (prevTransferStationIndex == -1 && ((Station)stationVertices.GetByIndex(curTransferStationIndex)).IsTransferStation)
+                        prevTransferStationIndex = curTransferStationIndex;
+                    else if (prevTransferStationIndex != -1 && ((Station)stationVertices.GetByIndex(curTransferStationIndex)).IsTransferStation)
+                    {
+                        onlyTransferAdjacencyMatrix[prevTransferStationIndex, curTransferStationIndex] = 1;
+                        onlyTransferAdjacencyMatrix[curTransferStationIndex, prevTransferStationIndex] = 1;
+                        prevTransferStationIndex = curTransferStationIndex;
+                    }
+                }
+
+                if (subwayLine.IsCircle && prevTransferStationIndex != -1)
+                {
+                    for (int i = 0; i < subwayLine.InLineSubwayStationsNames.Count; i++)
+                    {
+                        curTransferStationIndex = stationVertices.IndexOfKey(subwayLine.InLineSubwayStationsNames[i]);
+                        if (prevTransferStationIndex != -1 && ((Station)stationVertices.GetByIndex(curTransferStationIndex)).IsTransferStation)
+                        {
+                            onlyTransferAdjacencyMatrix[prevTransferStationIndex, curTransferStationIndex] = 1;
+                            onlyTransferAdjacencyMatrix[curTransferStationIndex, prevTransferStationIndex] = 1;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return;
+        }
+
         public int[,] AdjacencyMatrix
         {
             get
             {
                 return adjacencyMatrix;
+            }
+        }
+
+        public int[,] OnlyTransferAdjacencyMatrix
+        {
+            get
+            {
+                return onlyTransferAdjacencyMatrix;
             }
         }
     }
