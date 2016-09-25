@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,15 @@ namespace AdvancedSubwayRoutePlanning
         public MainWindow()
         {
             InitializeComponent();
+        }
+    }
+
+    public class VacationSpots : ObservableCollection<string>
+    {
+        public VacationSpots()
+        {
+            Add("北京");
+            Add("上海");
         }
     }
 }

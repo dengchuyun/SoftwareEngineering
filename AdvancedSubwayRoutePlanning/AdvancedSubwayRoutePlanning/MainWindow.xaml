@@ -5,8 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdvancedSubwayRoutePlanning"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="600">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="image_Map" Source="F:\Programming\SoftwareEngineering\AdvancedSubwayRoutePlanning\AdvancedSubwayRoutePlanning\Resource\IMG_0676.JPG" Grid.Row="0" Grid.Column="0"/>
+
+        <StackPanel x:Name="stackPanel_FunctionArea" Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+            <StackPanel.Resources>
+                <local:VacationSpots x:Key="citiesVacations"/>
+            </StackPanel.Resources>
+
+            <GroupBox x:Name="groupBox_Cities" Header="城市" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <ComboBox x:Name="comboBox_Cities" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" ItemsSource="{StaticResource citiesVacations}" IsReadOnly="True" Text="北京" Margin="0,5,0,5"/>
+            </GroupBox>
+
+            <GroupBox x:Name="groupBox_Route" Header="路径规划" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <RadioButton x:Name="radioButton_Shortest" Content="最短路径" Grid.Row="0" Grid.Column="0" Margin="0,5,0,5" IsChecked="True"/>
+                    <RadioButton x:Name="radioButton_Least" Content="最少换乘" Grid.Row="0" Grid.Column="1" Margin="0,5,0,5"/>
+                    <TextBlock x:Name="textBlock_StartStation" Text="起始站点：" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5"/>
+                    <ComboBox x:Name="comboBox_StartStation" Grid.Row="1" Grid.Column="1" IsEditable="True" StaysOpenOnEdit="True" Margin="0,5,0,5"/>
+                    <TextBlock x:Name="textBlock_EndStation" Text="目标站点：" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5"/>
+                    <ComboBox x:Name="comboBox_EndStation" Grid.Row="2" Grid.Column="1" IsEditable="True" StaysOpenOnEdit="True" Margin="0,5,0,5"/>
+                    <Button x:Name="button_Search" Content="查找" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,0,5"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox x:Name="groupBox_Info" Header="路径信息" HorizontalAlignment="Center">
+                <ListView x:Name="listView" HorizontalAlignment="Center" Width="130" Margin="0,5,0,5" MinHeight="200">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </GroupBox>
+        </StackPanel>
+
+        <StackPanel x:Name="stackPanel_MapLoad" Grid.Row="1" Grid.Column="0">
+        </StackPanel>
+
+        <TextBlock x:Name="block_Version" Grid.Row="1" Grid.Column="1" Margin="0,5,5,0" HorizontalAlignment="Stretch" TextAlignment="Right" Text="v1.0" VerticalAlignment="Stretch"/>
+
+
     </Grid>
 </Window>
