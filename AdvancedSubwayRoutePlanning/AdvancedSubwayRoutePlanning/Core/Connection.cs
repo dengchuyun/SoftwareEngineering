@@ -17,7 +17,7 @@ namespace Core
             {
                 return false;
             }
-            return this.LineName == ((Connection)obj).LineName && this.begin.Equals(((Connection)obj).begin) && this.end.Equals(((Connection)obj).end);
+            return this.LineName == ((Connection)obj).LineName && this.beginStation.Equals(((Connection)obj).beginStation) && this.endStation.Equals(((Connection)obj).endStation);
         }
         public override int GetHashCode()
         {

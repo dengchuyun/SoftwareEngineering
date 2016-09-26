@@ -37,7 +37,7 @@ namespace AdvancedSubwayRoutePlanning
             DrawLineList(dc);
 
             //绘制地铁线路
-            DrawSubwayGraph(dc);
+            //DrawSubwayGraph(dc);
         }
 
         private void DrawLineList(DrawingContext dc)
@@ -51,7 +51,7 @@ namespace AdvancedSubwayRoutePlanning
             foreach (SubwayLine line in subwayMap.SubwayLines)
             {
                 //绘制线路标示线
-                dc.DrawLine(new Pen(Brushes.Black, 5), new Point(rc.X + 10, y), new Point(rc.X + 70, y));
+                dc.DrawLine(new Pen(new SolidColorBrush(hexToColor(line.Color)), 5), new Point(rc.X + 10, y), new Point(rc.X + 70, y));
 
                 //绘制线路名
                 FormattedText formattedText = createFormattedText(line.Name);
@@ -81,7 +81,7 @@ namespace AdvancedSubwayRoutePlanning
             Point pt1 = new Point(connection.beginStation.X, connection.beginStation.Y);
             Point pt2 = new Point(connection.endStation.X, connection.endStation.Y);
 
-            Pen pen = new Pen(new SolidColorBrush((hexToColor(((SubwayLine)subwayMap.SubwayLines[connection.LineName]).Color))), 5);
+            Pen pen = new Pen(new SolidColorBrush((hexToColor(((SubwayLine)subwayMap.SubwayLines.Find((SubwayLine line) => line.Name == connection.LineName)).Color))), 5);
             pen.LineJoin = PenLineJoin.Round;
         }
 

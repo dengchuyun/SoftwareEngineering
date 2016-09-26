@@ -22,7 +22,7 @@ namespace Core
             string ls = route[0].LineName;
             route.ForEach(x =>
             {
-                output.Write(x.begin);
+                output.Write(x.beginStation);
                 if (x.LineName != ls)
                 {
                     output.Write("换乘地铁" + x.LineName);
@@ -30,7 +30,7 @@ namespace Core
                 }
                 output.WriteLine();
             });
-            output.WriteLine(route.FindLast(x => true).end.Name);
+            output.WriteLine(route.FindLast(x => true).endStation.Name);
             output.Flush();
         }
         public void PrintSubwayLine(List<Station> line)

@@ -8,13 +8,13 @@ namespace Core
     {
         public List<Station> Stations { get; }
         public List<Connection> Connections { get; }
-        public Hashtable SubwayLines { get; }
+        public List<SubwayLine> SubwayLines { get; }
         private Hashtable map;
         public SubwayMap()
         {
             this.Stations = new List<Station>();
             this.Connections = new List<Connection>();
-            this.SubwayLines = new Hashtable();
+            this.SubwayLines = new List<SubwayLine>();
             this.map = new Hashtable();
         }
 
@@ -32,7 +32,7 @@ namespace Core
         }
         public bool HasConnection(string begin, string end, string lineName)
         {
-            return Connections.Exists(x => x.begin.Name == begin && x.end.Name == end && x.LineName == lineName);
+            return Connections.Exists(x => x.beginStation.Name == begin && x.endStation.Name == end && x.LineName == lineName);
         }
         public void AddConnection(string begin, string end, string lineName)
         {
@@ -66,7 +66,7 @@ namespace Core
 
         public void AddSubwayLine(string name, string color)
         {
-            SubwayLines.Add(name, new SubwayLine(name, color));
+            SubwayLines.Add(new SubwayLine(name, color));
         }
 
         public List<Connection> GetDirections(string beginStationName, string endStationName, string mode)
@@ -104,14 +104,14 @@ namespace Core
                 ((List<Connection>)map[now]).ForEach(x =>
                 {
                     int cost = 1 + (!now.Equals(beginStation) && comeConnection.LineName != x.LineName ? TRANSFERCOST : 0);
-                    if ((int)dis[x.end] > (int)dis[now] + cost)
+                    if ((int)dis[x.endStation] > (int)dis[now] + cost)
                     {
-                        dis[x.end] = (int)dis[now] + cost;
-                        pre[x.end] = new List<Connection>((List<Connection>)pre[now]);
-                        ((List<Connection>)pre[x.end]).Add(x);
-                        if (!queue.Contains(x.end))
+                        dis[x.endStation] = (int)dis[now] + cost;
+                        pre[x.endStation] = new List<Connection>((List<Connection>)pre[now]);
+                        ((List<Connection>)pre[x.endStation]).Add(x);
+                        if (!queue.Contains(x.endStation))
                         {
-                            queue.Enqueue(x.end);
+                            queue.Enqueue(x.endStation);
                         }
                     }
                 });
@@ -123,9 +123,9 @@ namespace Core
             List<Station> line = new List<Station>();
             Connections.FindAll(x => x.LineName == lineName).ForEach(x =>
             {
-                if (!line.Contains(x.begin))
+                if (!line.Contains(x.beginStation))
                 {
-                    line.Add(x.begin);
+                    line.Add(x.beginStation);
                 }
             });
             return line;

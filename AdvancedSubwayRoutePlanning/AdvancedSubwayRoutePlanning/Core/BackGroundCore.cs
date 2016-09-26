@@ -6,7 +6,7 @@ namespace Core
     class BackgroundCore
     {
         private static Loader Loader = new Loader();
-        private static Printer Printer = new Printer(System.Console.OpenStandardOutput());
+        public static Printer Printer = new Printer(System.Console.OpenStandardOutput());
         private static SubwayMap subwayMap;
         private static List<Connection> route = null;
 
