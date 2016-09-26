@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,26 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Core;
 
 namespace AdvancedSubwayRoutePlanning
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// SubwayGraph.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SubwayGraph : UserControl
     {
-        public MainWindow()
+        public SubwayGraph()
         {
             InitializeComponent();
-            Function.SelectFunction(this, ((App)App.Current).Args);
         }
-    }
 
-    public class Cities : ObservableCollection<string>
-    {
-        public Cities()
+        protected override void OnRender(DrawingContext dc)
         {
+            base.OnRender(dc);
+
+            DrawLineList(dc);
+        }
+
+        private void DrawLineList(DrawingContext dc)
+        {
+            Rect rc = new Rect(10, 10, 150, 13 * 15);
+            dc.DrawRectangle(new SolidColorBrush(Color.FromArgb(180, 245, 245, 245)), new Pen(Brushes.Black, 0.5), rc);
         }
     }
 }

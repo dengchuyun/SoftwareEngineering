@@ -13,5 +13,16 @@ namespace AdvancedSubwayRoutePlanning
     /// </summary>
     public partial class App : Application
     {
+        private string[] args;
+
+        private void AppStartup(object sender, StartupEventArgs e)
+        {
+            args = e.Args;
+        }
+
+        public string[] Args
+        {
+            get { return args; }
+        }
     }
 }

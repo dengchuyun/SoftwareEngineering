@@ -16,15 +16,16 @@
             <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="image_Map" Source="F:\Programming\SoftwareEngineering\AdvancedSubwayRoutePlanning\AdvancedSubwayRoutePlanning\Resource\IMG_0676.JPG" Grid.Row="0" Grid.Column="0"/>
+        <local:SubwayGraph Grid.Row="0" Grid.Column="0"/>
 
         <StackPanel x:Name="stackPanel_FunctionArea" Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+            
             <StackPanel.Resources>
-                <local:VacationSpots x:Key="citiesVacations"/>
+                <local:Cities x:Key="cities"/>
             </StackPanel.Resources>
 
             <GroupBox x:Name="groupBox_Cities" Header="城市" HorizontalAlignment="Center" VerticalAlignment="Top">
-                <ComboBox x:Name="comboBox_Cities" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" ItemsSource="{StaticResource citiesVacations}" IsReadOnly="True" Text="北京" Margin="0,5,0,5"/>
+                <ComboBox x:Name="comboBox_Cities" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" ItemsSource="{StaticResource cities}" IsReadOnly="True" Text="北京" Margin="0,5,0,5"/>
             </GroupBox>
 
             <GroupBox x:Name="groupBox_Route" Header="路径规划" HorizontalAlignment="Center" VerticalAlignment="Top">
@@ -54,7 +55,8 @@
                 <ListView x:Name="listView" HorizontalAlignment="Center" Width="130" Margin="0,5,0,5" MinHeight="200">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn/>
+                            <GridViewColumn Header="站点" Width="65"/>
+                            <GridViewColumn Header="地铁线" Width="65"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
