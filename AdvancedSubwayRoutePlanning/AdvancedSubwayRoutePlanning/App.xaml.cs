@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Core;
 
 namespace AdvancedSubwayRoutePlanning
 {
@@ -14,6 +15,12 @@ namespace AdvancedSubwayRoutePlanning
     public partial class App : Application
     {
         private string[] args;
+        private BackgroundCore backgroundCore;
+
+        public App()
+        {
+            backgroundCore = new BackgroundCore();
+        }
 
         private void AppStartup(object sender, StartupEventArgs e)
         {

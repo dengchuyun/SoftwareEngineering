@@ -29,7 +29,8 @@ namespace Core
             foreach (XmlNode eachline in lines)
             {
                 string lineName = eachline.Attributes.GetNamedItem("name").InnerXml;
-                SubwayMap.AddLine(lineName);
+                string lineColor = eachline.Attributes.GetNamedItem("color").InnerXml;
+                SubwayMap.AddSubwayLine(lineName, lineColor);
                 XmlNodeList stations = eachline.SelectSingleNode("stations").ChildNodes;
                 foreach (XmlNode sta in stations)
                 {

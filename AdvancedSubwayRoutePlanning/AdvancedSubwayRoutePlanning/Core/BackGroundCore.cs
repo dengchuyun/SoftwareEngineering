@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using AdvancedSubwayRoutePlanning;
 namespace Core
 {
-    class Function
+    class BackgroundCore
     {
         private static Loader Loader = new Loader();
         private static Printer Printer = new Printer(System.Console.OpenStandardOutput());
-        private static SubwayMap subwayMap = Loader.LoadFromXMLFile("subway.xml");
+        private static SubwayMap subwayMap;
         private static List<Connection> route = null;
+
+        public BackgroundCore()
+        {
+            subwayMap = Loader.LoadFromXMLFile("subway.xml");
+        }
 
         public static SubwayMap SubwayMap
         {

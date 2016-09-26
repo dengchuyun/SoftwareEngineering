@@ -58,9 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Core\Line.cs" />
+    <Compile Include="Core\SubwayLine.cs" />
     <Compile Include="Core\Connection.cs" />
-    <Compile Include="Core\Function.cs" />
+    <Compile Include="Core\BackgroundCore.cs" />
     <Compile Include="Core\Loader.cs" />
     <Compile Include="Core\Printer.cs" />
     <Compile Include="Core\Station.cs" />

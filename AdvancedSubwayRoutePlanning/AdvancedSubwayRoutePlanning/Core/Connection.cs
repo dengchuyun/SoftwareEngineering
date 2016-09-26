@@ -2,13 +2,13 @@ namespace Core
 {
     class Connection
     {
-        public Station begin { get; }
-        public Station end { get; }
+        public Station beginStation { get; }
+        public Station endStation { get; }
         public string LineName { get; }
         public Connection(Station begin, Station end, string lineName)
         {
-            this.begin = begin;
-            this.end = end;
+            this.beginStation = begin;
+            this.endStation = end;
             this.LineName = lineName;
         }
         public override bool Equals(object obj)
@@ -21,7 +21,7 @@ namespace Core
         }
         public override int GetHashCode()
         {
-            return (LineName + "|" + begin + "|" + end).GetHashCode();
+            return (LineName + "|" + beginStation + "|" + endStation).GetHashCode();
         }
     }
 }

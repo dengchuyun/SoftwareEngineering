@@ -8,12 +8,13 @@ namespace Core
     {
         public List<Station> Stations { get; }
         public List<Connection> Connections { get; }
-        public List<Line> Lines { get; }
+        public Hashtable SubwayLines { get; }
         private Hashtable map;
         public SubwayMap()
         {
             this.Stations = new List<Station>();
             this.Connections = new List<Connection>();
+            this.SubwayLines = new Hashtable();
             this.map = new Hashtable();
         }
 
@@ -63,9 +64,9 @@ namespace Core
             }
         }
 
-        public void AddLine(string name)
+        public void AddSubwayLine(string name, string color)
         {
-            Lines.Add(new Line(name));
+            SubwayLines.Add(name, new SubwayLine(name, color));
         }
 
         public List<Connection> GetDirections(string beginStationName, string endStationName, string mode)

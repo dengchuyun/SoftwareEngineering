@@ -25,7 +25,6 @@ namespace AdvancedSubwayRoutePlanning
         public MainWindow()
         {
             InitializeComponent();
-            Function.SelectFunction(this, ((App)App.Current).Args);
         }
     }
 
