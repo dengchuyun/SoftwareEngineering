@@ -1,27 +1,42 @@
 namespace Core
 {
-    class Connection
+    public class Connection
     {
-        public Station beginStation { get; }
-        public Station endStation { get; }
+        public Station BeginStation { get; }
+        public Station EndStation { get; }
         public string LineName { get; }
-        public Connection(Station begin, Station end, string lineName)
+        private int type;
+
+        public int Type
         {
-            this.beginStation = begin;
-            this.endStation = end;
-            this.LineName = lineName;
+            get { return type; }
+            set
+            {
+                if (-1 <= value && value <= 2)
+                    type = value;
+            }
         }
+
+        public Connection(Station beginStationName, Station endStationName, string lineName, int type)
+        {
+            this.BeginStation = beginStationName;
+            this.EndStation = endStationName;
+            this.LineName = lineName;
+            this.type = type;
+        }
+
         public override bool Equals(object obj)
         {
             if (obj == null || GetType() != obj.GetType())
             {
                 return false;
             }
-            return this.LineName == ((Connection)obj).LineName && this.beginStation.Equals(((Connection)obj).beginStation) && this.endStation.Equals(((Connection)obj).endStation);
+            return this.LineName == ((Connection)obj).LineName && this.BeginStation.Equals(((Connection)obj).BeginStation) && this.EndStation.Equals(((Connection)obj).EndStation);
         }
+
         public override int GetHashCode()
         {
-            return (LineName + "|" + beginStation + "|" + endStation).GetHashCode();
+            return (LineName + "|" + BeginStation + "|" + EndStation).GetHashCode();
         }
     }
 }

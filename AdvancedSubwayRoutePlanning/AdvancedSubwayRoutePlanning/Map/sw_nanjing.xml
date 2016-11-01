@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sw cid="南京市" n="6" c="南京" icon="">
+	<l lid="地铁1号线" lb="1号线" slb="1" n="27" loop="false" lbx="260" lby="270.85" lbr="0.0" lc="0x5CB8E5">	
+		<p sid="迈皋桥" lb="迈皋桥" x="-16.85" y="-518.2" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="红山动物园" lb="红山动物园" x="-41.5" y="-471.55" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="南京站" lb="南京站" x="-73.85" y="-410.65" rx="12.3" ry="-10" st="true" ex="true" iu="true" rc="false" slb="true" ln="南京市|地铁1号线,南京市|地铁3号线" int="2" />
+		<p sid="新模范马路" lb="新模范马路" x="-137.1" y="-374.05" rx="-68" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="玄武门" lb="玄武门" x="-137.1" y="-312.65" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="鼓楼" lb="鼓楼" x="-137.1" y="-250.2" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="珠江路" lb="珠江路" x="-137.1" y="-187.8" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="新街口" lb="新街口" x="-133.1" y="-138.2" rx="8.3" ry="10" st="true" ex="true" iu="true" rc="false" slb="true" ln="南京市|地铁1号线,南京市|地铁2号线" int="2" />
+		<p sid="张府园" lb="张府园" x="-137.1" y="-62.95" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="三山街" lb="三山街" x="-164.7" y="-5.95" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="中华门" lb="中华门" x="-197.7" y="62.55" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="安德门" lb="安德门" x="-223.7" y="133.7" rx="20.3" ry="-10" st="true" ex="true" iu="true" rc="false" slb="true" ln="南京市|地铁10号线,南京市|地铁1号线" int="2" />
+		<p sid="天隆寺" lb="天隆寺" x="-193.5" y="234.2" rx="-25" ry="10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="软件大道" lb="软件大道" x="-127.2" y="234.05" rx="-25" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="花神庙" lb="花神庙" x="-56.15" y="234" rx="-20.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="南京南站" lb="南京南站" x="-13" y="265" rx="12" ry="-9" st="true" ex="true" iu="true" rc="false" slb="true" ln="南京市|地铁1号线,南京市|地铁S1号线,南京市|地铁3号线" int="2" />
+		<p sid="双龙大道" lb="双龙大道" x="15" y="292.95" rx="10" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="河定桥" lb="河定桥" x="45.21" y="325.1" rx="10" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="胜太路" lb="胜太路" x="60" y="342.45" rx="10" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="百家湖" lb="百家湖" x="89" y="382.85" rx="5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="" lb="" x="110.15" y="410.3" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="小龙湾" lb="小龙湾" x="159.2" y="392.5" rx="-20.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="竹山路" lb="竹山路" x="211.5" y="371.1" rx="-20.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="天印大道" lb="天印大道" x="263.2" y="349.75" rx="-28" ry="-28" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="龙眠大道" lb="龙眠大道" x="318.5" y="327.4" rx="-29.5" ry="-26.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="南医大·江苏经贸学院" lb="南医大·江苏经贸学院" x="347.5" y="363.15" rx="10" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="南京交院" lb="南京交院" x="391.5" y="418.55" rx="10" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+		<p sid="中国药科大学" lb="中国药科大学" x="451.85" y="493.9" rx="10" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁1号线" int="2" />
+	</l>
+	<l lid="地铁S1号线" lb="S1号线" slb="1" n="8" loop="false" lbx="-185.8" lby="470.3" lc="0x268484">	
+		<p sid="南京南站" lb="南京南站" x="-13" y="265" rx="12" ry="-9" st="true" ex="true" iu="true" rc="false" slb="true" ln="南京市|地铁1号线,南京市|地铁S1号线,南京市|地铁3号线" int="2" />
+		<p sid="" lb=""  x="-75" y="307.3" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" int=""/>
+		<p sid="翠屏山" lb="翠屏山"  x="-75" y="360.3" rx="-48.4" ry="-10.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S1号线" int="2"/>
+		<p sid="河海大学·佛城西路" lb="河海大学·佛城西路"  x="-75.8" y="591.3" rx="-120.1" ry="-10.1" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S1号线" int="2"/>
+		<p sid="吉印大道" lb="吉印大道"  x="-75" y="678.3" rx="-59.6" ry="-10.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S1号线" int="2"/>
+		<p sid="正方中路" lb="正方中路"  x="-75" y="744.3" rx="-59.6" ry="-10.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S1号线" int="2"/>
+		<p sid="翔宇路北" lb="翔宇路北"  x="-75" y="803.3" rx="-59.6" ry="-12.1" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S1号线" int="2"/>
+		<p sid="翔宇路南" lb="翔宇路南"  x="-75" y="866.3" rx="-60.6" ry="-11.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S1号线" int="2"/>
+		<p sid="禄口机场" lb="禄口机场"  x="41.2" y="969.3" rx="-61.5" ry="-10.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S1号线" int="2"/>
+	</l>
+	<l lid="地铁2号线" lb="2号线" slb="2" n="26" loop="false" lbx="150.2" lby="-200.85" lbr="0.0" lc="0xD63542">	
+		<p sid="经天路" lb="经天路" x="565.55" y="-327.1" rx="-42" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="南大仙林校区" lb="南大仙林校区" x="529.75" y="-306.75" rx="-14" ry="18" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="羊山公园" lb="羊山公园" x="496.1" y="-287.5" rx="-42" ry="-23" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="仙林中心" lb="仙林中心" x="465.25" y="-271.1" rx="-8" ry="18" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="学则路" lb="学则路" x="436.95" y="-253.6" rx="-42" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="仙鹤门" lb="仙鹤门" x="407.65" y="-236.95" rx="-13" ry="20" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="金马路" lb="金马路" x="376.55" y="-218.8" rx="-51" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="马群" lb="马群" x="376.55" y="-155.3" rx="-36" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="钟灵街" lb="钟灵街" x="324.2" y="-122.6" rx="-46" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="孝陵卫" lb="孝陵卫" x="265.85" y="-88.35"  rx="-19.5" ry="-28.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="下马坊" lb="下马坊" x="208.85" y="-112.3"  rx="-19.5" ry="-28.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="苜蓿园" lb="苜蓿园" x="146.2" y="-138.2" rx="-19.5" ry="-28.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="明故宫" lb="明故宫" x="69.5" y="-138.2" rx="-19.5" ry="-28.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="西安门" lb="西安门" x="0" y="-138.2" rx="-15" ry="-28.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="大行宫" lb="大行宫" x="-72.8" y="-138.2" rx="7" ry="-28.5" st="true" ex="true" iu="true" rc="false" slb="true" ln="南京市|地铁2号线,南京市|地铁3号线" int="2" />
+		<p sid="新街口" lb="新街口" x="-133.1" y="-138.2" rx="-51" ry="-10" st="true" ex="true" iu="true" rc="false" slb="false" ln="南京市|地铁10号线,南京市|地铁2号线" int="2" />
+		<p sid="上海路" lb="上海路" x="-199.4" y="-138.2" rx="-19.5" ry="-28.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="汉中门" lb="汉中门" x="-267.9" y="-138.2" rx="-19.5" ry="-28.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="莫愁湖" lb="莫愁湖" x="-291.9" y="-80.75" rx="-50" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="" lb="" x="-303" y="-53" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="云锦路" lb="云锦路" x="-372.75" y="-68.6" rx="-19.5" ry="-28.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="" lb="" x="-414.5" y="-76.95" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="集庆门大街" lb="集庆门大街" x="-428.4" y="-49.25" rx="10" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="兴隆大街" lb="兴隆大街" x="-456.85" y="15.65" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="奥体东" lb="奥体东" x="-483.8" y="78.3" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="元通" lb="元通" x="-512" y="146" rx="-23.5" ry="-26.5" st="true" ex="true" iu="true" rc="false" slb="false" ln="南京市|地铁10号线,南京市|地铁2号线" int="2" />
+		<p sid="" lb="" x="-538.95" y="205.45" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="雨润大街" lb="雨润大街" x="-466.35" y="230.5" rx="12.3" ry="-24" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+		<p sid="" lb="" x="-398.8" y="253.25" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="油坊桥" lb="油坊桥" x="-434.25" y="344.7" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁2号线" int="2" />
+	</l>
+	<l lid="地铁10号线" lb="10号线" slb="1" n="16" loop="false" lbx="-703.2" lby="-84" lbr="0.0" lc="0xac8756">		
+		<p sid="安德门" lb="安德门" x="-223.7" y="133.7" rx="20.3" ry="-10" st="true" ex="true" iu="true" rc="false" slb="true" ln="南京市|地铁10号线,南京市|地铁1号线" int="2" />
+		<p sid="小行" lb="小行" x="-326.5" y="200.95" rx="-20.5" ry="-28.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+		<p sid="中胜" lb="中胜" x="-424.95" y="171.1" rx="-20.5" ry="-26.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+		<p sid="元通" lb="元通" x="-512" y="146" rx="-23.5" ry="-26.5" st="true" ex="true" iu="true" rc="false" slb="true" ln="南京市|地铁10号线,南京市|地铁2号线" int="2" />
+		<p sid="" lb="" x="-567.25" y="127.25" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="奥体中心" lb="奥体中心" x="-522" y="31.95" rx="-60" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+		<p sid="梦都大街" lb="梦都大街"  x="-488" y="-32" rx="-37.5" ry="-29.8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+		<p sid="绿博园" lb="绿博园"  x="-550" y="-32" rx="-17.7" ry="14.2" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+		<p sid="江心洲" lb="江心洲"  x="-620" y="-32" rx="-17.7" ry="14.2" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+		<p sid="临江" lb="临江"  x="-694" y="-32" rx="-11.8" ry="13" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+		<p sid="浦口万汇城" lb="浦口万汇城"  x="-745" y="-32" rx="-32" ry="12.2" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+		<p sid="南京工业大学" lb="南京工业大学"  x="-854" y="-32" rx="-79.6" ry="-13.3" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+		<p sid="龙华路" lb="龙华路"  x="-854" y="1.9" rx="-47.1" ry="-10.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+		<p sid="文德路" lb="文德路"  x="-854" y="31" rx="-47.5" ry="-10.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+		<p sid="雨山路" lb="雨山路"  x="-854" y="61" rx="-47.5" ry="-10.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁10号线" int="2" />
+	</l>
+
+	<l lid="地铁S8号线" lb="S8号线" slb="1" n="17" loop="false" lbx="100" lby="-730" lbr="0.0" lc="0xe75e00">		
+		<p sid="泰山新村" lb="泰山新村" x="-513.5" y="-563.7" rx="10.5" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="泰冯路" lb="泰冯路" x="-512.5" y="-613.7" rx="14" ry="-19.5" st="true" ex="true" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线,南京市|地铁3号线," int="2" />
+		<p sid="高新开发区" lb="高新开发区" x="-511.5" y="-663.7" rx="-33.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="信息工程大学" lb="信息工程大学" x="-410.5" y="-680.7" rx="-33.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="卸甲甸" lb="卸甲甸" x="-311.4" y="-696" rx="-13.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="大厂" lb="大厂" x="-212.5" y="-711.3" rx="-13.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="葛塘" lb="葛塘" x="-113.6" y="-726.7" rx="-13.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="长芦" lb="长芦" x="-10" y="-742" rx="-13.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="化工园" lb="化工园" x="88.2" y="-757.2" rx="-18.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="六合开发区" lb="六合开发区" x="189.9" y="-773" rx="-33.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="龙池" lb="龙池" x="288.9" y="-788" rx="-13.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="雄州" lb="雄州" x="381.7" y="-803.1" rx="10.5" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="凤凰山公园" lb="凤凰山公园" x="479.5" y="-818.7" rx="10.5" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="方州广场" lb="方州广场" x="479.75" y="-861" rx="10.5" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="沈桥" lb="沈桥" x="480" y="-902.7" rx="10.5" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="八百桥" lb="八百桥" x="480.25" y="-943.3" rx="10.5" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />
+		<p sid="金牛湖" lb="金牛湖" x="480.5" y="-985" rx="10.5" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁S8号线" int="2" />		
+	</l>
+	<l lid="地铁3号线" lb="3号线" slb="3" n="28" loop="false" lbx="13" lby="-36" lbr="0.0" lc="0x4c9a46">
+		<p sid="秣周东路" lb="秣周东路" x="155" y="622" rx="13" ry="-9" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="东大九龙湖校区" lb="东大九龙湖校区" x="155" y="585" rx="13" ry="-7" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="诚信大道" lb="诚信大道" x="155" y="545" rx="-23" ry="-23"	 st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="" lb="" x="-12.5" y="545" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" int="" />
+		<p sid="九龙湖" lb="九龙湖" x="-13" y="503" rx="12" ry="-7" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="天元西路" lb="天元西路" x="-13" y="427" rx="12" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="胜太西路" lb="胜太西路" x="-13" y="373" rx="10" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="宏运大道" lb="宏运大道" x="-13" y="315" rx="-57" ry="-7" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="南京南站" lb="南京南站" x="-13" y="265" rx="12" ry="-9" st="true" ex="true" iu="true" rc="false" slb="true" ln="南京市|地铁3号线,南京市|地铁1号线,南京市|地铁S1号线" int="2"/>
+		<p sid="明发广场" lb="明发广场" x="13" y="237" rx="-40" ry="-29" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="大明路" lb="大明路" x="58" y="193" rx="10" ry="-6" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="卡子门" lb="卡子门" x="13.5" y="126" rx="10" ry="-13" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="雨花门" lb="雨花门" x="-28.5" y="69" rx="12" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="武定门" lb="武定门" x="-54" y="34" rx="10" ry="-7" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="夫子庙" lb="夫子庙" x="-72.5" y="2" rx="12" ry="-7.5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="常府街" lb="常府街" x="-72.5" y="-66.5" rx="12" ry="-7" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="大行宫" lb="大行宫" x="-72.8" y="-138.2" rx="7" ry="-28.5" st="true" ex="true" iu="true" rc="false" slb="true" ln="南京市|地铁3号线,南京市|地铁2号线" int="2"/>
+		<p sid="浮桥" lb="浮桥" x="-72.5" y="-186" rx="11" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="鸡鸣寺" lb="鸡鸣寺" x="-72.5" y="-248.5" rx="10" ry="-7" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="南京林业大学·新庄" lb="南京林业大学·新庄" x="-72.5" y="-337.5" rx="10" ry="-7" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="南京站" lb="南京站" x="-73.85" y="-410.65" rx="12.3" ry="-10" st="true" ex="true" iu="true" rc="false" slb="false" ln="南京市|地铁3号线,南京市|地铁1号线" int="2"/>
+		<p sid="小市" lb="小市" x="-73.85" y="-454" rx="-37" ry="-5" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+        <p sid="五塘广场" lb="五塘广场" x="-74" y="-490" rx="-57" ry="2" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+        <p sid="上元门" lb="上元门" x="-170" y="-550" rx="-57" ry="2" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+     	<p sid="柳洲东路" lb="柳洲东路" x="-261" y="-615" rx="-45" ry="13" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="天润城" lb="天润城" x="-395" y="-615" rx="-22" ry="12" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="泰冯路" lb="泰冯路" x="-512.5" y="-613.7" rx="14" ry="-19.5" st="true" ex="true" iu="true" rc="false" slb="false" ln="南京市|地铁3号线,南京市|地铁S8号线" int="2"/>
+		<p sid="东大成贤学院" lb="东大成贤学院" x="-570.5" y="-615" rx="-30" ry="-23" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="星火路" lb="星火路" x="-627.5" y="-615" rx="-17" ry="13" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+		<p sid="林场" lb="林场" x="-682.5" y="-615" rx="-11" ry="12" st="true" ex="false" iu="true" rc="false" slb="true" ln="南京市|地铁3号线" int="2"/>
+	</l>
+</sw>

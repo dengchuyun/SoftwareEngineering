@@ -3,13 +3,15 @@ using System.Text;
 using System.Collections.Generic;
 namespace Core
 {
-    class Printer
+    public class Printer
     {
         private StreamWriter output;
+
         public Printer(Stream os)
         {
             this.output = new StreamWriter(os, Encoding.Default);
         }
+
         public void PrintDirections(List<Connection> route)
         {
             if (route == null || route.Count == 0)
@@ -22,17 +24,18 @@ namespace Core
             string ls = route[0].LineName;
             route.ForEach(x =>
             {
-                output.Write(x.beginStation);
+                output.Write(x.BeginStation);
                 if (x.LineName != ls)
                 {
-                    output.Write("换乘地铁" + x.LineName);
+                    output.Write(" 换乘" + x.LineName);
                     ls = x.LineName;
                 }
                 output.WriteLine();
             });
-            output.WriteLine(route.FindLast(x => true).endStation.Name);
+            output.WriteLine(route.FindLast(x => true).EndStation.Name);
             output.Flush();
         }
+
         public void PrintSubwayLine(List<Station> line)
         {
             if (line == null || line.Count == 0)
@@ -44,6 +47,7 @@ namespace Core
             line.ForEach(x => output.WriteLine(x));
             output.Flush();
         }
+
         public void WriteLine(string s)
         {
             output.WriteLine(s);

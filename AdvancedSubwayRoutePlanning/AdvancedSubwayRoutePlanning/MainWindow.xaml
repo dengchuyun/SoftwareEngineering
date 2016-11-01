@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdvancedSubwayRoutePlanning"
         mc:Ignorable="d"
-        Title="地铁线路规划软件" Height="500" Width="600">
+        Title="地铁线路规划软件" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}" Icon="Resources/MetroApp.ico" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -17,7 +17,7 @@
             <ColumnDefinition Width="180"/>
         </Grid.ColumnDefinitions>
 
-        <!--<local:SubwayGraph Grid.Row="0" Grid.Column="0"/>-->
+        <local:SubwayGraph x:Name="subwayGraph" Grid.Row="0" Grid.Column="0"/>
 
         <Grid x:Name="stackPanel_FunctionArea" Grid.Row="0" Grid.Column="1">
 
@@ -31,11 +31,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <GroupBox x:Name="groupBox_Cities" Header="城市" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0">
-                <ComboBox x:Name="comboBox_Cities" HorizontalAlignment="Center" VerticalAlignment="Top" Width="160" ItemsSource="{StaticResource cities}" IsReadOnly="True" Text="北京" Margin="0,5,0,5"/>
+            <GroupBox x:Name="groupBox_Cities" Header="城市" Grid.Row="0" Grid.Column="0">
+                <ComboBox x:Name="comboBox_Cities" HorizontalAlignment="Center" VerticalAlignment="Top" Width="160" ItemsSource="{StaticResource cities}" IsReadOnly="True" Text="北京" Margin="0,5,0,5" DropDownOpened="comboBox_Cities_DropDownOpened" SelectionChanged="comboBox_Cities_SelectionChanged"/>
             </GroupBox>
 
-            <GroupBox x:Name="groupBox_Route" Header="路径规划" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0">
+            <GroupBox x:Name="groupBox_Route" Header="路径规划" Grid.Row="1" Grid.Column="0">
                 <Grid HorizontalAlignment="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -48,19 +48,18 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <RadioButton x:Name="radioButton_Shortest" Content="最短路径" Grid.Row="0" Grid.Column="0" Margin="0,5,0,5" IsChecked="True"/>
-                    <RadioButton x:Name="radioButton_Least" Content="最少换乘" Grid.Row="0" Grid.Column="1" Margin="0,5,0,5" IsChecked="False"/>
-                    <TextBlock x:Name="textBlock_StartStation" Text="起始站点：" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5"/>
-                    <ComboBox x:Name="comboBox_StartStation" Grid.Row="1" Grid.Column="1" IsEditable="True" StaysOpenOnEdit="True" Margin="0,5,0,5"/>
-                    <TextBlock x:Name="textBlock_EndStation" Text="目标站点：" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5"/>
-                    <ComboBox x:Name="comboBox_EndStation" Grid.Row="2" Grid.Column="1" IsEditable="True" StaysOpenOnEdit="True" Margin="0,5,0,5"/>
-                    <Button x:Name="button_Search" Content="查找" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,0,5" Click="searchRoute"/>
+                    <RadioButton x:Name="radioButton_Shortest" Content="最短路径" Grid.Row="0" Grid.Column="0" Margin="0,5,0,5" IsChecked="True" Click="radioButton_Shortest_Click"/>
+                    <RadioButton x:Name="radioButton_Least" Content="最少换乘" Grid.Row="0" Grid.Column="1" Margin="0,5,0,5" IsChecked="False" Click="radioButton_Least_Click"/>
+                    <TextBlock x:Name="textBlock_StartStation" Text="起始站点：" Grid.Row="1" Grid.Column="0" Margin="0,5,0,5"/>
+                    <ComboBox x:Name="comboBox_StartStation" Grid.Row="1" Grid.Column="1" IsEditable="True" StaysOpenOnEdit="True" Margin="0,5,0,5" Text="{Binding Path=startStation.Name, ElementName=subwayGraph}"/>
+                    <TextBlock x:Name="textBlock_EndStation" Text="目标站点：" Grid.Row="2" Grid.Column="0" Margin="0,5,0,5"/>
+                    <ComboBox x:Name="comboBox_EndStation" Grid.Row="2" Grid.Column="1" IsEditable="True" StaysOpenOnEdit="True" Margin="0,5,0,5" Text="{Binding Path=endStation.Name, ElementName=subwayGraph}"/>
+                    <Button x:Name="button_Search" Content="查找" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,0,5" Click="button_Search_Click"/>
                 </Grid>
             </GroupBox>
 
             <GroupBox x:Name="groupBox_Info" Header="路径信息" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0">
-
-                <ListView x:Name="listView_Route" HorizontalAlignment="Center" Width="160" Margin="0,5,0,5" MinHeight="200">
+                <ListView x:Name="listView_Route" HorizontalAlignment="Center" Width="160" Margin="0,5,0,5">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="站点" Width="80" DisplayMemberBinding="{Binding Path=StationName}"/>
@@ -71,10 +70,15 @@
             </GroupBox>
         </Grid>
 
-        <StackPanel x:Name="stackPanel_MapLoad" Grid.Row="1" Grid.Column="0">
-        </StackPanel>
+        <Grid x:Name="stackPanel_MapLoad" Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="block_Version" Grid.Row="1" Grid.Column="1" Margin="0,5,5,0" HorizontalAlignment="Stretch" TextAlignment="Right" Text="v1.0" VerticalAlignment="Stretch"/>
+            <TextBlock x:Name="block_Copyright" Margin="0,5,5,0" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" TextAlignment="Left" Text="Copyright © 2016 Deng(Front-end) &amp; Yue(Back-end). All rights reserved. Refer to Lave Zhang." VerticalAlignment="Stretch"/>
+            <TextBlock x:Name="block_Version"  Margin="0,5,5,0" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" TextAlignment="Right" Text="v2.0" VerticalAlignment="Stretch"/>
+        </Grid>
 
     </Grid>
 </Window>

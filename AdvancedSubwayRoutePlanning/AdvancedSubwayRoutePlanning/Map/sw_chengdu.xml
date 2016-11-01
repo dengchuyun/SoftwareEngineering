@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sw cid="成都市" n="2" c="成都">
+	<l lid="地铁1号线" lb="1号线" slb="1" n="16" loop="false" lbx="-230.2" lby="80.85" lbr="0.0" lc="0x0066CC">
+		<p sid="升仙湖" lb="升仙湖" x="109.55" y="-669.35" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="火车北站" lb="火车北站" x="-28.95" y="-522.6" rx="17" ry="5" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="人民北路" lb="人民北路" x="-28.95" y="-411.6" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="文殊院" lb="文殊院" x="-96.55" y="-314.6" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="骡马市" lb="骡马市" x="-170.8" y="-240.6" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线, 成都市|地铁4号线" int="2" />
+		<p sid="天府广场" lb="天府广场" x="-170.8" y="-170.5" rx="20" ry="28" st="true" ex="true" iu="true" rc="false" slb="true" ln="成都市|地铁1号线,成都市|地铁2号线" int="2" />
+		<p sid="锦江宾馆" lb="锦江宾馆"  x="-170.8" y="-78.5" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="华西坝" lb="华西坝"  x="-170.8" y="-5.95" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="省体育馆" lb="省体育馆"  x="-170.8" y="66.6" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="倪家桥" lb="倪家桥"  x="-170.8" y="139.15" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="桐梓林" lb="桐梓林"  x="-170.8" y="211.7" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="火车南站" lb="火车南站"  x="-176" y="284.25" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="高新" lb="高新" x="-229.85" y="380" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="金融城" lb="金融城" x="-229.85" y="453" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="孵化园" lb="孵化园" x="-229.85" y="515.25" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="锦城广场" lb="锦城广场" x="-195.85" y="585.25" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+		<p sid="世纪城" lb="世纪城" x="-161.85" y="645.5" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+        <p sid="天府三街" lb="天府三街" x="-161.85" y="720" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+        <p sid="天府五街" lb="天府五街" x="-161.85" y="795" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+        <p sid="华府大道" lb="华府大道" x="-161.85" y="870" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+        <p sid="四河" lb="四河" x="-161.85" y="945" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+        <p sid="广都" lb="广都" x="-161.85" y="1020" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁1号线" int="2" />
+	</l>
+	<l lid="地铁2号线" lb="2号线" slb="2" n="20" loop="false" lbx="127.2" lby="-50.85" lbr="0.0" lc="0xEC6A00">	
+		<p sid="犀浦" lb="犀浦" x="-785.35" y="-965" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />		
+		<p sid="天河路" lb="天河路" x="-745.35" y="-915" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />	
+		<p sid="百草路" lb="百草路" x="-705.35" y="-865" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />	
+		<p sid="金周路" lb="金周路" x="-665.35" y="-815" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />	
+		<p sid="金科北路" lb="金科北路" x="-620.35" y="-765" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />	
+		<p sid="迎宾大道" lb="迎宾大道" x="-580.35" y="-715" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />	
+		<p sid="茶店子客运站" lb="茶店子客运站" x="-540.35" y="-660" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="羊犀立交" lb="羊犀立交" x="-591.35" y="-516.3" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="一品天下" lb="一品天下" x="-531.1" y="-452" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="蜀汉路东" lb="蜀汉路东" x="-473.8" y="-390" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="白果林" lb="白果林" x="-398.2" y="-308.45" rx="17" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="中医大省医院" lb="中医大省医院" x="-352.5" y="-258.95" rx="10" ry="-17" st="true" ex="true" iu="true" rc="false" slb="true" ln="成都市|地铁2号线, 成都市|地铁4号线" int="2" />
+		<p sid="通惠门" lb="通惠门" x="-287.85" y="-207.25" rx="4" ry="-26" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="人民公园" lb="人民公园" x="-224.5" y="-188.6" rx="0" ry="-28" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="天府广场" lb="天府广场" x="-170.8" y="-170.5" rx="20" ry="28" st="true" ex="true" iu="true" rc="false" slb="true" ln="成都市|地铁1号线,成都市|地铁2号线" int="2" />
+		<p sid="春熙路" lb="春熙路" x="-44" y="-145.1" rx="12.3" ry="-13" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="东门大桥" lb="东门大桥" x="35.5" y="-124.6" rx="12.3" ry="-13" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="牛王庙" lb="牛王庙" x="113.5" y="-104.1" rx="12.3" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="牛市口" lb="牛市口" x="196.15" y="-82.6" rx="8.3" ry="-24" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="东大路" lb="东大路" x="227.7" y="-62.95" rx="12.3" ry="-24" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="" lb="" x="253.7" y="-45.65" rx="" ry="" st="false" ex="" iu="" rc="" slb="" ln="" int="2" />
+		<p sid="塔子山公园" lb="塔子山公园" x="270.7" y="-44.65" rx="4.3" ry="-25" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="成都东客站" lb="成都东客站" x="318.7" y="-44.2" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="成渝立交" lb="成渝立交" x="359.2" y="5.8" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="惠王陵" lb="惠王陵" x="434.7" y="97.8" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="洪河" lb="洪河" x="474.7" y="147" rx="12.3" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="成都行政学院" lb="成都行政学院" x="519.7" y="200" rx="-45.3" ry="13" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />		
+		<p sid="大面铺" lb="大面铺" x="582.7" y="200" rx="-20" ry="13" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="连山坡" lb="连山坡" x="648.7" y="200" rx="-20" ry="13" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="界牌" lb="界牌" x="715.7" y="200" rx="-15" ry="13" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="书房" lb="书房" x="784.7" y="200" rx="-15" ry="13" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="龙平路" lb="龙平路" x="850.7" y="200" rx="-20" ry="13" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+		<p sid="龙泉驿" lb="龙泉驿" x="918.7" y="200" rx="-20" ry="13" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁2号线" int="2" />
+	</l>
+    <l lid="地铁4号线" lb="4号线" slb="4" n="15" loop="false" lbx="-790" lby="-230" lbr="0.0" lc="0x2FCC1F">	
+        <p sid="非遗博览园" lb="非遗博览园" x="-820" y="-262" rx="-20" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+        <p sid="蔡桥" lb="蔡桥" x="-724" y="-262" rx="-10" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+        <p sid="中坝" lb="中坝" x="-654" y="-262" rx="-10" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+        <p sid="成都西站" lb="成都西站" x="-585" y="-261" rx="-20" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+        <p sid="清江西路" lb="清江西路" x="-522" y="-260" rx="-20" ry="10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+        <p sid="文化宫" lb="文化宫" x="-482.5" y="-260" rx="-20" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+        <p sid="西南财大" lb="西南财大" x="-436.5" y="-260" rx="-20" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+        <p sid="草堂北路" lb="草堂北路" x="-394.5" y="-259" rx="-20" ry="10" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+		<p sid="中医大省医院" lb="中医大省医院" x="-352.5" y="-258.95" rx="10" ry="-17" st="true" ex="true" iu="true" rc="false" slb="true" ln="成都市|地铁2号线, 成都市|地铁4号线" int="2" />
+        <p sid="宽窄巷子" lb="宽窄巷子" x="-258" y="-242" rx="-5" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+		<p sid="骡马市" lb="骡马市" x="-170.8" y="-240.6" rx="17" ry="-10" st="true" ex="true" iu="true" rc="false" slb="true" ln="成都市|地铁1号线, 成都市|地铁4号线" int="2" />
+        <p sid="太升南路" lb="太升南路" x="-82" y="-216" rx="-10" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+        <p sid="市二医院" lb="市二医院" x="2" y="-193" rx="-15" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+        <p sid="玉双路" lb="玉双路" x="124" y="-160" rx="-20" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+        <p sid="双桥路" lb="双桥路" x="192" y="-141" rx="-10" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2" />
+        <p sid="" lb="" x="213" y="-131" rx="" ry="" st="false" ex="false" rc="false" slb="false" ln="成都市|地铁4号线" int="2" />
+        <p sid="万年场" lb="万年场" x="255" y="-131" rx="-20" ry="-20" st="true" ex="false" iu="true" rc="false" slb="true" ln="成都市|地铁4号线" int="2"/>
+    </l>
+</sw>

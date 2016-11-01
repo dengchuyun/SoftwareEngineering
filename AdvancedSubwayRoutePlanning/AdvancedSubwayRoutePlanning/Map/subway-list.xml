@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<l>
+ <c name="北京" src="sw_beijing.xml"/>
+ <c name="成都" src="sw_chengdu.xml"/>
+ <c name="重庆" src="sw_chongqing.xml"/>
+ <c name="广州" src="sw_guangzhou.xml"/>
+ <c name="南京" src="sw_nanjing.xml"/>
+ <c name="上海" src="sw_shanghai.xml"/>
+ <c name="深圳" src="sw_shenzhen.xml"/>
+</l>

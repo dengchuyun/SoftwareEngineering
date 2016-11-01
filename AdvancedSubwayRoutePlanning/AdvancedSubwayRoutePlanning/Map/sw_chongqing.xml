@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sw cid="重庆市" n="5" c="重庆" src=" " bg="bg_chongqing" icon="">
+	<l lid="轨道交通1号线" lb="1号线" slb="1" n="19" loop="false" lbx="-272" lby="44.65" lbr="0.0" lc="0xD63542">
+		<p sid="尖顶坡" lb="尖顶坡" x="-704.85" y="-253.95" rx="-18" ry="-28.05" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="大学城" lb="大学城" x="-636.85" y="-253.95" rx="-18" ry="-28.05" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="陈家桥" lb="陈家桥" x="-575.85" y="-253.95" rx="-18" ry="-28.05" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="微电园" lb="微电园" x="-520" y="-253.95" rx="-18" ry="-28.05" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="赖家桥" lb="赖家桥" x="-450" y="-253.95" rx="-18" ry="-28.05" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="双碑" lb="双碑" x="-276.55" y="-253.95" rx="-10.75" ry="-28.05" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="石井坡" lb="石井坡" x="-276.55" y="-186.95" rx="16.55" ry="-10.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="磁器口" lb="磁器口" x="-276.55" y="-120.25" rx="16.55" ry="-10.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="烈士墓" lb="烈士墓" x="-276.55" y="-60.75" rx="16.55" ry="-8.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="杨公桥" lb="杨公桥" x="-243.85" y="-15.25" rx="16.8" ry="-14.1" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="沙坪坝" lb="沙坪坝" x="-205.85" y="13.25" rx="14.8" ry="-15.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="小龙坎" lb="小龙坎" x="-163.35" y="41.95" rx="17.8" ry="-5.05" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="马家岩" lb="马家岩" x="-194.9" y="85.35" rx="13.8" ry="-13" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="高庙村" lb="高庙村" x="-144.9" y="115.35" rx="6.8" ry="-23.3" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="" lb="" x="-96.5" y="141.75"  rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="石桥铺" lb="石桥铺" x="-79.05" y="139.25" rx="-17.95" ry="-27.95" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="歇台子" lb="歇台子" x="-22.55" y="121.3" rx="-17.2" ry="-28.25" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="石油路" lb="石油路" x="37.95" y="105.05" rx="-33.95" ry="-22.25" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="大坪" lb="大坪" x="95.95" y="90.1" rx="10" ry="6" st="true" ex="true" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线,重庆市|轨道交通2号线" int="3" />
+		<p sid="鹅岭" lb="鹅岭" x="164.5" y="70.85" rx="-12.85" ry="-30.25" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="两路口" lb="两路口" x="238" y="53.9" rx="8.75" ry="6.85" st="true" ex="true" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线,重庆市|轨道交通3号线" int="3" />
+		<p sid="七星岗" lb="七星岗" x="294.75" y="34.65" rx="-11.7" ry="-25.25" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线" int="3" />
+		<p sid="较场口" lb="较场口" x="336.35" y="62.2" rx="-22.75" ry="12.15" st="true" ex="true" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线,重庆市|轨道交通2号线" int="3" />
+		<p sid="" lb="" x="388.6" y="69.85"  rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="小什字" lb="小什字" x="479.65" y="-7.35" rx="15.45" ry="-1.45" st="true" ex="true" iu="true" rc="false" slb="false" ln="重庆市|轨道交通1号线,重庆市|轨道交通6号线" int="3" />
+	</l>
+	<l lid="轨道交通2号线" lb="2号线" slb="2" n="18" loop="false" lbx="100" lby="158" lbr="0.0" lc="0x2CC427">
+		<p sid="鱼洞" lb="鱼洞" x="99.05" y="709.55" rx="-14" ry="-27.15" st="true" ex="true" iu="true" rc="false" slb="false" ln="重庆市|轨道交通2号线,重庆市|轨道交通3号线" int="3" />
+
+		<p sid="大江" lb="大江" x="63.5" y="671.0" rx="10" ry="-13.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+
+		<p sid="白居寺" lb="白居寺" x="31.5" y="634.0" rx="10" ry="-13.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+
+		<p sid="刘家坝" lb="刘家坝" x="0" y="598.4" rx="10" ry="-13.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+
+		<p sid="金家湾" lb="金家湾" x="-32.5" y="560.4" rx="10" ry="-13.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+
+		<p sid="建桥" lb="建桥" x="-65.5" y="522.4" rx="10" ry="-13.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+
+		<p sid="天堂堡" lb="天堂堡" x="-98" y="485.4" rx="10" ry="-13.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+
+		<p sid="新山村" lb="新山村" x="-137" y="438.4" rx="14.85" ry="-8.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="大渡口" lb="大渡口" x="-137" y="399.6" rx="17.3" ry="-9.1" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="" lb="" x="-137" y="379.1"  rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="平安" lb="平安" x="-118.5" y="361.35" rx="-40.5" ry="-8.1" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="马王场" lb="马王场" x="-81.5" y="328.1" rx="2.3" ry="10.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="大堰村" lb="大堰村" x="-27" y="326.75" rx="-16.2" ry="-25.55" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="动物园" lb="动物园" x="61.7" y="324.75" rx="-15.7" ry="11.95" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="杨家坪" lb="杨家坪" x="96.55" y="286.35" rx="-50.75" ry="-10.4" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="谢家湾" lb="谢家湾" x="96.95" y="242" rx="-50.2" ry="-7.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="袁家岗" lb="袁家岗" x="95.95" y="193.15" rx="-44.2" ry="-8.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="大坪" lb="大坪" x="95.95" y="90.1" rx="10" ry="6" st="true" ex="true" iu="true" rc="false" slb="false" ln="重庆市|轨道交通1号线,重庆市|轨道交通2号线" int="3" />
+		<p sid="" lb="" x="95.95" y="40"  rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="佛图关" lb="佛图关" x="105.35" y="34.65" rx="-17.45" ry="-25.65" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="李子坝" lb="李子坝" x="169.55" y="13.75" rx="-27.6" ry="-25.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="牛角沱" lb="牛角沱" x="200" y="-3" rx="16.1" ry="-2.9" st="true" ex="true" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线,重庆市|轨道交通3号线" int="3" />
+		<p sid="曾家岩" lb="曾家岩" x="265.85" y="-44.35" rx="-13.7" ry="-25.8" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="大溪沟" lb="大溪沟" x="308.1" y="-39.8" rx="-3.75" ry="-25.75" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="黄花园" lb="黄花园" x="349.7" y="-20.35" rx="2.85" ry="-25.75" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="临江门" lb="临江门" x="390.1" y="1.35" rx="9.3" ry="-17.25" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通2号线" int="3" />
+		<p sid="" lb="" x="402.55" y="19.35"  rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="较场口" lb="较场口" x="336.35" y="62.2" rx="-22.75" ry="12.15" st="true" ex="true" iu="true" rc="false" slb="true" ln="重庆市|轨道交通1号线,重庆市|轨道交通2号线" int="3" />
+	</l>
+	<l lid="轨道交通3号线" lb="3号线" slb="3" n="38" loop="false" lbx="222" lby="-318.25" lbr="0.0" lc="0x497ACC">
+		<p sid="江北机场" lb="江北机场" x="596.85" y="-710.35" rx="15.95" ry="0.7" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="碧津" lb="碧津" x="563.55" y="-668.55" rx="18.65" ry="0.7" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="双龙" lb="双龙" x="535.55" y="-633.85" rx="18.65" ry="0.65" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="回兴" lb="回兴" x="506.1" y="-596.2" rx="18.7" ry="0.7" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="长福路" lb="长福路" x="473.1" y="-559.2" rx="-11.7" ry="18.1" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="翠云" lb="翠云" x="402.1" y="-546.55" rx="11.7" ry="12.1" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="园博园" lb="园博园" x="365.1" y="-515.2" rx="13.3" ry="5.4" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="鸳鸯" lb="鸳鸯" x="323.45" y="-483.85" rx="18.65" ry="5.4" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="金童路" lb="金童路" x="327.45" y="-434.2" rx="16.7" ry="-3.3" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="金渝" lb="金渝" x="348.45" y="-394.85" rx="17.35" ry="-1.3" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="童家院子" lb="童家院子" x="299.75" y="-370.85" rx="11.95" ry="0" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="龙头寺" lb="龙头寺" x="283" y="-320" rx="11.95" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />		
+		<p sid="重庆北站南广场" lb="重庆北站南广场" x="268.2" y="-272.5" rx="13.6" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="狮子坪" lb="狮子坪" x="256.4" y="-236.85" rx="16" ry="-8" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="" lb="" x="245.75" y="-213.15" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="唐家院子" lb="唐家院子" x="217.6" y="-213.2" rx="-25.05" ry="-25.4" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="郑家院子" lb="郑家院子" x="160.15" y="-213.1" rx="-25.05" ry="-25.45" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="" lb="" x="110.7" y="-211.65" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="嘉州路" lb="嘉州路" x="121.85" y="-183.8" rx="-46.35" ry="-5.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="红旗河沟" lb="红旗河沟" x="141" y="-136.6" rx="6.4" ry="-26.9" st="true" ex="true" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线,重庆市|轨道交通6号线" int="3" />
+		<p sid="观音桥" lb="观音桥" x="160.05" y="-74.8" rx="-50.05" ry="-5.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="" lb="" x="169.05" y="-49.5" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="华新街" lb="华新街" x="179.05" y="-33.1" rx="-50.55" ry="-5.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="牛角沱" lb="牛角沱" x="200" y="-3" rx="16.1" ry="-2.9" st="true" ex="true" iu="true" rc="false" slb="false" ln="重庆市|轨道交通2号线,重庆市|轨道交通3号线" int="3" />
+		<p sid="两路口" lb="两路口" x="238" y="53.9" rx="8.75" ry="6.85" st="true" ex="true" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线,重庆市|轨道交通1号线" int="3" />
+		<p sid="铜元局" lb="铜元局" x="233.55" y="158" rx="-44.6" ry="-5" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="工贸" lb="工贸" x="276.55" y="189" rx="-38.95" ry="-2" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="南坪" lb="南坪" x="299.2" y="222" rx="-35.7" ry="-0.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="四公里" lb="四公里" x="322.65" y="258" rx="-50.65" ry="-5.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="五公里" lb="五公里" x="315.65" y="293.7" rx="-51.15" ry="-10.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="六公里" lb="六公里" x="306.65" y="330.35" rx="-52.15" ry="-11.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="二塘" lb="二塘" x="297.6" y="372.65" rx="-41.5" ry="-11.35" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="八公里" lb="八公里" x="289.3" y="415.65" rx="-49.8" ry="-9.55" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="麒龙" lb="麒龙" x="279.3" y="460.65" rx="-40.15" ry="-10.35" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="九公里" lb="九公里" x="271.3" y="499" rx="-48" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="岔路口" lb="岔路口" x="264" y="533" rx="-48" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="花溪" lb="花溪" x="257" y="566" rx="-40" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="大山村" lb="大山村" x="251" y="597" rx="-48" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="学堂湾" lb="学堂湾" x="241.7" y="641" rx="-50.2" ry="-11.1" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="鱼胡路" lb="鱼胡路" x="226.4" y="709.55" rx="-39.9" ry="-27.15" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="金竹" lb="金竹" x="160" y="709.55" rx="-14" ry="-27.15" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+		<p sid="鱼洞" lb="鱼洞" x="99.05" y="709.55" rx="-4" ry="-27.15" st="true" ex="true" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线" int="3" />
+	</l>
+	<l lid="轨道交通6号线" lb="6号线" slb="4" n="11" loop="false" lbx="-72.8" lby="-246.35" lbr="0.0" lc="0xF06484">
+		<p sid="北碚" lb="北碚"  x="-126.2" y="-786.4" rx="-33.5" ry="-10.8" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="2" />
+		<p sid="天生" lb="天生"  x="-126.2" y="-731.6" rx="-33.5" ry="-10.8" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="2" />
+		<p sid="状元碑" lb="状元碑"  x="-126.4" y="-667.8" rx="-43.6" ry="-10.7" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="2" />
+		<p sid="龙凤溪" lb="龙凤溪"  x="-126.4" y="-610" rx="-44.1" ry="-12.7" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="2" />
+		
+		<p sid="向家岗" lb="向家岗"  x="-34.3" y="-608" rx="-20.5" ry="-22.7" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="2" />
+		
+		<p sid="蔡家" lb="蔡家"  x="42.3" y="-608" rx="13.5" ry="-10.7" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="2" />
+		<p sid="曹家湾" lb="曹家湾"  x="42.3" y="-585" rx="13.5" ry="-10.7" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="2" />
+		<p sid="金山寺" lb="金山寺"  x="42.3" y="-557.4" rx="11.6" ry="-10.8" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="2" />
+		<p sid="礼嘉" lb="礼嘉" x="42.15" y="-503.45" rx="-37.15" ry="-10.6" st="true" ex="true" iu="true" rc="false" slb="true" ln="轨道交通6号线,重庆市|国博线" int="3" />
+		<p sid="九曲河" lb="九曲河" x="16.15" y="-449.15" rx="-47.15" ry="-10.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="轨道交通6号线,重庆市|国博线" int="3" />
+		<p sid="康庄" lb="康庄" x="-9.8" y="-394.85" rx="-35.7" ry="-10.1" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="大竹林" lb="大竹林" x="-32.45" y="-351.25" rx="-49.55" ry="-5.05" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="" lb="" x="-13.7" y="-321.65" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="" lb="" x="29.6" y="-320.15" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="光电园" lb="光电园" x="31.05" y="-295.15" rx="-50.05" ry="-8.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="冉家坝" lb="冉家坝" x="31.05" y="-208.5" rx="-51.55" ry="-7" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="大龙山" lb="大龙山" x="31.05" y="-162.1" rx="-50.05" ry="-5.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="" lb="" x="54.4" y="-136.6" rx="" ry="" st="false" ex="" iu="" rc="false" slb="" ln="" />
+		<p sid="花卉园" lb="花卉园" x="72.4" y="-136.6" rx="-17.4" ry="14.75" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="红旗河沟" lb="红旗河沟" x="141" y="-136.6" rx="6.4" ry="-26.9" st="true" ex="true" iu="true" rc="false" slb="true" ln="重庆市|轨道交通3号线,重庆市|轨道交通6号线" int="3" />
+		<p sid="黄泥塝" lb="黄泥塝" x="202.7" y="-136.6" rx="-14.7" ry="14.75" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="红土地" lb="红土地" x="271.8" y="-136.6" rx="-13.15" ry="12.25" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="五里店" lb="五里店" x="340.35" y="-136" rx="14.65" ry="-9.25" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="江北城" lb="江北城" x="393.35" y="-88" rx="11.65" ry="-13.25" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="大剧院" lb="大剧院" x="439.0" y="-47" rx="10.65" ry="-13.25" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+
+		<p sid="小什字" lb="小什字" x="479.65" y="-7.35" rx="10.45" ry="-13.45" st="true" ex="true" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线,重庆市|轨道交通1号线" int="3" />
+
+		<p sid="上新街" lb="上新街" x="546.95" y="56.35" rx="-48.45" ry="-5.45" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+
+		<p sid="刘家坪" lb="刘家坪" x="612.95" y="118.35" rx="-48.45" ry="-5.45" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+
+		<p sid="" lb="" x="694" y="193.35" rx="" ry="" st="" ex="" iu="" rc="false" slb="" ln="" int="3" />
+		
+		<p sid="长生桥" lb="长生桥" x="676" y="215.35" rx="-46" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="邱家湾" lb="邱家湾" x="627" y="284.35" rx="-46" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+		<p sid="茶园" lb="茶园" x="580" y="357.35" rx="-35" ry="-10" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|轨道交通6号线" int="3" />
+	</l>
+	<l lid="国博线" lb="国博线" slb="5" n="3" loop="false" lbx="234.2" lby="-677.4" lbr="0.0" lc="0xF06484">
+		<p sid="礼嘉" lb="礼嘉" x="42.15" y="-503.45" rx="-37.15" ry="-10.6" st="true" ex="true" iu="true" rc="false" slb="true" ln="轨道交通6号线,重庆市|国博线" int="3" />
+		<p sid="平场" lb="平场" x="82.15" y="-503.45" rx="-10.15" ry="11.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="轨道交通6号线,重庆市|国博线" int="3" />
+		<p sid="" lb="" x="182.2" y="-503.4" rx="-37.15" ry="-10.6" st="false" ex="false" iu="true" rc="false" slb="true" ln="重庆市|国博线" int="3" />
+    	<p sid="黄茅坪" lb="黄茅坪" x="202.2" y="-531.45" rx="10.15" ry="-5.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="轨道交通6号线,重庆市|国博线" int="3" />
+		<p sid="高义口" lb="高义口" x="252.15" y="-590.45" rx="12.15" ry="-5.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="轨道交通6号线,重庆市|国博线" int="3" />
+		<p sid="国博中心" lb="国博中心"  x="298.2" y="-648.4" rx="10" ry="-8.6" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|国博线" int="3" />
+		<p sid="悦来" lb="悦来"  x="335.2" y="-695.4" rx="10.6" ry="-10.7" st="true" ex="false" iu="true" rc="false" slb="true" ln="重庆市|国博线" int="3" />
+	</l>
+</sw>
+
+
+
+
+

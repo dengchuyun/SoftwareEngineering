@@ -23,41 +23,158 @@ namespace AdvancedSubwayRoutePlanning
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<DisplayRouteUnit> displayRouteUnitList = new ObservableCollection<DisplayRouteUnit>();
+        #region 字段区域
+
+        private ObservableCollection<DisplayRouteUnit> displayRouteUnitList;
+        private ObservableCollection<string> displayStationsName = new ObservableCollection<string>();
+        private SubwayMap subwayMap;
+
+        #endregion
+
+        #region 构造区域
 
         public MainWindow()
         {
             InitializeComponent();
+            this.subwayMap = BackgroundCore.GetBackgroundCore().SubwayMap;
+            this.displayRouteUnitList = ((App)App.Current).DisplayRouteUnitList;
+            this.listView_Route.ItemsSource = displayRouteUnitList;
+            this.comboBox_StartStation.ItemsSource = displayStationsName;
+            this.comboBox_EndStation.ItemsSource = displayStationsName;
+            ((App)App.Current).IsShortestPlaning = (bool)radioButton_Shortest.IsChecked;
+
+            BackgroundCore.GetBackgroundCore().SelectFunction(this, ((App)App.Current).Args);
         }
 
-        private void searchRoute(object sender, RoutedEventArgs e)
+        #endregion
+
+        #region 功能函数区域
+
+        private void searchRoute()
         {
+            if (subwayMap == null)
+                return;
+
             string mode;
 
             if ((bool)radioButton_Shortest.IsChecked)
                 mode = "-b";
             else
                 mode = "-c";
-            
-            List<Connection> route = BackgroundCore.SubwayMap.GetDirections(comboBox_StartStation.Text, comboBox_EndStation.Text, mode);
 
-            displayRouteUnitList.Clear();
+            Cursor = Cursors.Wait;
 
-            displayRouteUnitList.Add(new DisplayRouteUnit(route[0].beginStation.Name, route[0].LineName));
-            foreach (Connection connection in route)
+            try
             {
-                displayRouteUnitList.Add(new DisplayRouteUnit(connection.endStation.Name, connection.LineName));
-            }
+                if (subwayMap.CurRoute != null)
+                    subwayMap.CurRoute.Clear();
+                displayRouteUnitList.Clear();
+                subwayMap.SetStartStation(comboBox_StartStation.Text);
+                subwayMap.SetEndStation(comboBox_EndStation.Text);
+                subwayMap.CurRoute = subwayMap.GetDirections(mode);
 
-            listView_Route.ItemsSource = displayRouteUnitList;
+                if (subwayMap.CurRoute.Count == 0)
+                    throw new Exception("起始/终点站点相同！");
+
+                displayRouteUnitList.Add(new DisplayRouteUnit(subwayMap.CurRoute[0].BeginStation.Name, subwayMap.CurRoute[0].LineName));
+                foreach (Connection connection in (subwayMap.CurRoute))
+                {
+                    displayRouteUnitList.Add(new DisplayRouteUnit(connection.EndStation.Name, connection.LineName));
+                }
+
+                this.subwayGraph.ResetFlashIndex();
+            }
+            catch (Exception ex)
+            {
+                subwayMap.SetStartStation("");
+                subwayMap.SetEndStation("");
+                ErrorWindow errorWindow = new ErrorWindow();
+                errorWindow.textBlock_Msg.Text = ex.Message;
+                errorWindow.Show();
+                return;
+            }
+            finally
+            {
+                Cursor = Cursors.Arrow;
+                subwayGraph.InvalidateVisual();
+            }
         }
+
+        #endregion
+
+        #region 事件区域
+
+        private void button_Search_Click(object sender, RoutedEventArgs e)
+        {
+            searchRoute();
+        }
+
+
+        private void radioButton_Shortest_Click(object sender, RoutedEventArgs e)
+        {
+            ((App)App.Current).IsShortestPlaning = (bool)radioButton_Shortest.IsChecked;
+            if (subwayMap != null && subwayMap.StartStation != null && subwayMap.EndStation != null)
+                searchRoute();
+        }
+
+        private void radioButton_Least_Click(object sender, RoutedEventArgs e)
+        {
+            ((App)App.Current).IsShortestPlaning = (bool)radioButton_Shortest.IsChecked;
+            if (subwayMap != null && subwayMap.StartStation != null && subwayMap.EndStation != null)
+                searchRoute();
+        }
+
+        private void comboBox_StartStation_GotMouseCapture(object sender, MouseEventArgs e)
+        {
+            this.comboBox_StartStation.IsDropDownOpen = true;
+        }
+
+        private void comboBox_EndStation_GotMouseCapture(object sender, MouseEventArgs e)
+        {
+            this.comboBox_EndStation.IsDropDownOpen = true;
+        }
+
+        private void comboBox_StartStation_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.comboBox_StartStation.IsDropDownOpen = true;
+        }
+
+        private void comboBox_EndStation_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.comboBox_EndStation.IsDropDownOpen = true;
+        }
+
+        private void comboBox_Cities_DropDownOpened(object sender, EventArgs e)
+        {
+            ((Cities)this.stackPanel_FunctionArea.Resources["cities"]).Clear();
+            foreach (string city in BackgroundCore.GetBackgroundCore().CityList)
+                ((Cities)this.stackPanel_FunctionArea.Resources["cities"]).Add(city);
+        }
+
+        private void comboBox_Cities_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.comboBox_Cities.SelectedItem != null)
+            {
+                BackgroundCore.GetBackgroundCore().RefreshMap((string)this.comboBox_Cities.SelectedItem);
+                subwayGraph.IsEnabled = true;
+                subwayGraph.SetSubwayMap();
+                this.subwayMap = BackgroundCore.GetBackgroundCore().SubwayMap;
+                displayStationsName.Clear();
+                foreach (Station station in subwayMap.Stations)
+                {
+                    displayStationsName.Add(station.Name);
+                }
+                subwayGraph.InvalidateVisual();
+            }
+        }
+
+        #endregion
     }
 
     public class Cities : ObservableCollection<string>
     {
         public Cities()
         {
-            Add("北京");
         }
     }
 
